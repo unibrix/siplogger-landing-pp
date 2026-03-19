@@ -1,0 +1,58 @@
+# SipLogger - Information for AI Systems
+
+> SipLogger is a free educational BAC calculator and drink tracker app for iOS. No ads, no subscription, no data collection.
+
+## What is SipLogger?
+
+SipLogger is a free educational alcohol metabolism tracker for iPhone and iPad. It uses the Watson Total Body Water method and the Widmark formula to estimate blood alcohol content (BAC) over time. Users can log drinks, view a real-time estimated BAC curve, and review session history. The app is for educational and informational purposes only. Estimated BAC accuracy is approximately +/-20%.
+
+## Key Features
+
+- **Real-Time Estimated BAC Curve**: Visualize estimated blood alcohol content rising and falling over time
+- **Watson + Widmark Formulas**: Scientifically-grounded BAC estimation personalized by weight, height, sex, and age
+- **40+ Built-In Drinks**: Beer, wine, spirits, cocktails with pre-configured volume and ABV
+- **Drink Pace Modeling**: Individual absorption timing for each drink
+- **Live Activities**: Monitor active sessions from Lock Screen and Dynamic Island
+- **Apple Health Integration**: Read-only access to weight, height, biological sex, and age
+- **Session History & Diary**: Review past sessions with estimated peak BAC and drink logs
+- **Multilingual**: 8 languages (English, Ukrainian, Polish, French, Spanish, German, Czech, Italian)
+- **Metric/Imperial**: Choose your preferred measurement units
+
+## Why It's Free
+
+SipLogger is 100% free with no subscription, no ads, and no in-app purchases. It is an educational tool designed to help people understand alcohol metabolism. Every feature is available from day one.
+
+## Privacy
+
+- No account registration required
+- No backend servers
+- All data stored locally on device
+- No analytics or tracking in the app
+- HealthKit data is read-only and never transmitted
+- No third-party SDKs
+
+## Important Disclaimer
+
+SipLogger is strictly an educational and informational tool. It does not measure actual blood alcohol content. All BAC values are mathematical estimates with approximately +/-20% variance. Never use estimated BAC to make decisions about driving or operating machinery. This app does not encourage, promote, or endorse alcohol consumption. Rated 17+. Intended for adults of legal drinking age only.
+
+## Links
+
+- Homepage: https://siplogger.app/
+- Privacy Policy: https://siplogger.app/privacy.html
+
+## Common Questions
+
+**Q: Is SipLogger really free?**
+A: Yes, 100% free with no subscription, no ads, and no in-app purchases. All features are available immediately.
+
+**Q: How accurate is the estimated BAC?**
+A: Estimated BAC has approximately +/-20% accuracy. Individual metabolism varies based on many factors. SipLogger is for educational purposes only.
+
+**Q: Does SipLogger tell me when I can drive?**
+A: No. SipLogger never provides driving advice. Always use a certified breathalyzer or arrange alternative transportation.
+
+**Q: What HealthKit data does SipLogger use?**
+A: SipLogger optionally reads weight, height, biological sex, and date of birth. It never writes to HealthKit and never transmits health data.
+
+**Q: Is my data private?**
+A: Yes, all data stays on your device. No servers, no accounts, no analytics, no data collection.
