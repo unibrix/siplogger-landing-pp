@@ -32,7 +32,10 @@
     @media(max-width:480px){.hero{padding:3rem 1rem}.hero h1{font-size:1.8rem}.hero .tagline{font-size:1rem}.app-store-badge img{height:44px}}
     </style>
     <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('siplogger_theme')||'system')</script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css"></noscript>
     <link rel="preload" as="image" type="image/webp" href="images/screenshot-1.webp">
     <link rel="canonical" href="https://siplogger.app/">
 
