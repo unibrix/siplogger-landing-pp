@@ -33,7 +33,7 @@ SipLogger is 100% free with no subscription, no ads, and no in-app purchases. It
 
 ## Important Disclaimer
 
-SipLogger is strictly an educational and informational tool. It does not measure actual blood alcohol content. All BAC values are mathematical estimates with approximately +/-20% variance. Never use estimated BAC to make decisions about driving or operating machinery. This app does not encourage, promote, or endorse alcohol consumption. Rated 17+. Intended for adults of legal drinking age only.
+SipLogger is strictly an educational and informational tool. It does not measure actual blood alcohol content. All BAC values are mathematical estimates with approximately +/-20% variance. Never use estimated BAC to make decisions about driving or operating machinery. This app does not encourage, promote, or endorse alcohol consumption. Rated 18+. Intended for adults of legal drinking age only.
 
 ## Links
 

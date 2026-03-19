@@ -48,7 +48,7 @@ SipLogger is an educational alcohol metabolism tracker that uses the Watson Tota
 
 SipLogger is an educational tool designed to help people understand alcohol metabolism. No subscription, no ads, no data collection — just a free, private app for responsible drinking awareness.
 
-> **Disclaimer:** SipLogger is for educational and informational purposes only. Estimated BAC accuracy is ±20%. Never use estimated BAC to make decisions about driving or operating machinery. Rated 17+.
+> **Disclaimer:** SipLogger is for educational and informational purposes only. Estimated BAC accuracy is ±20%. Never use estimated BAC to make decisions about driving or operating machinery. Rated 18+.
 
 ---
 
