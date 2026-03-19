@@ -27,11 +27,12 @@
     .theme-toggle-group button.active{background:rgba(255,255,255,.15);opacity:1}
     .theme-toggle-group svg{width:14px;height:14px;fill:none;stroke:#f0f0f0;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
     .flying-emojis{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0}
-    .flying-emoji{position:absolute;animation-timing-function:linear;animation-iteration-count:infinite;will-change:transform}
+    .flying-emoji{position:absolute;bottom:-80px;animation-name:floatUp;animation-timing-function:ease-in-out;animation-iteration-count:infinite;will-change:transform;color:rgba(255,255,255,.35);line-height:1}
     @media(max-width:768px){.hero{min-height:auto;padding:4rem 1.5rem}.hero h1{font-size:2.2rem}.hero .tagline{font-size:1.1rem}.hero .hero-subtitle{font-size:.95rem}}
     @media(max-width:480px){.hero{padding:3rem 1rem}.hero h1{font-size:1.8rem}.hero .tagline{font-size:1rem}.app-store-badge img{height:44px}}
     </style>
     <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('siplogger_theme')||'system')</script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.2/src/light/style.css">
     <link rel="preload" as="image" type="image/webp" href="images/screenshot-1.webp">
     <link rel="canonical" href="https://siplogger.app/">
 
@@ -351,15 +352,23 @@
         </a>
     </section>
 
-    <!-- Flying Emojis Randomizer -->
+    <!-- Flying Icons Randomizer -->
     <script>
-    const DRINK_EMOJIS = [
-        "\ud83c\udf7a", "\ud83c\udf7b", "\ud83c\udf77", "\ud83e\udd42", "\ud83c\udf78", "\ud83c\udf79", "\ud83c\udf7e", "\ud83e\udd43", "\ud83e\uddca", "\ud83e\udec7", "\ud83c\udf76", "\ud83e\udd64", "\ud83e\udee7"
+    const DRINK_ICON_CLASSES = [
+        'ph-light ph-wine',
+        'ph-light ph-beer-stein',
+        'ph-light ph-beer-bottle',
+        'ph-light ph-martini',
+        'ph-light ph-champagne',
+        'ph-light ph-brandy',
+        'ph-light ph-pint-glass'
     ];
-    const randomEmoji = () => DRINK_EMOJIS[Math.floor(Math.random() * DRINK_EMOJIS.length)];
+    const randomIconClass = () => DRINK_ICON_CLASSES[Math.floor(Math.random() * DRINK_ICON_CLASSES.length)];
     document.querySelectorAll('.flying-emoji').forEach(el => {
-        el.textContent = randomEmoji();
-        el.addEventListener('animationiteration', () => el.textContent = randomEmoji());
+        el.innerHTML = '<i class="' + randomIconClass() + '"></i>';
+        el.addEventListener('animationiteration', () => {
+            el.innerHTML = '<i class="' + randomIconClass() + '"></i>';
+        });
     });
     </script>
 
@@ -384,42 +393,42 @@
         <h2>Educational BAC Tracking — Powerful Features</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="icon">📈</div>
+                <div class="icon"><i class="ph-light ph-chart-line-up"></i></div>
                 <h3>Real-Time Estimated BAC Curve</h3>
                 <p>Watch your estimated blood alcohol content rise and fall in real time. The educational BAC chart shows absorption, peak, and metabolism phases as a smooth curve — helping you understand how alcohol affects your body over time.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">🧪</div>
+                <div class="icon"><i class="ph-light ph-flask"></i></div>
                 <h3>Watson + Widmark Formulas</h3>
                 <p>SipLogger uses the Watson Total Body Water method combined with the Widmark formula for scientifically-grounded estimated BAC calculations. Personalized using your weight, height, biological sex, and age. Estimated accuracy is ±20%.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">🍺</div>
+                <div class="icon"><i class="ph-light ph-beer-stein"></i></div>
                 <h3>40+ Built-In Drinks</h3>
                 <p>Choose from a curated library of 40+ drink templates — beer, wine, spirits, cocktails, and more. Each has pre-configured volume and ABV. Create custom drinks with any volume and alcohol percentage.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">⏱️</div>
+                <div class="icon"><i class="ph-light ph-timer"></i></div>
                 <h3>Drink Pace Modeling</h3>
                 <p>SipLogger models each drink's absorption timing individually. See how spacing your drinks affects your estimated BAC curve — an educational tool for understanding alcohol metabolism rates.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">❤️</div>
+                <div class="icon"><i class="ph-light ph-heartbeat"></i></div>
                 <h3>HealthKit Integration</h3>
                 <p>Optionally read weight, height, biological sex, and age from Apple HealthKit for more accurate educational estimates. Read-only — SipLogger never writes to HealthKit and never transmits your health data.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">📋</div>
+                <div class="icon"><i class="ph-light ph-clipboard-text"></i></div>
                 <h3>Session History & Diary</h3>
                 <p>Review past sessions with detailed drink logs, estimated peak BAC, session duration, and time to approach baseline. A personal educational diary of your drinking patterns.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">🔴</div>
+                <div class="icon"><i class="ph-light ph-device-mobile"></i></div>
                 <h3>Live Activities</h3>
                 <p>Monitor your active session from the Lock Screen and Dynamic Island with Live Activities. See your current estimated BAC and time to approach baseline at a glance.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">🌍</div>
+                <div class="icon"><i class="ph-light ph-translate"></i></div>
                 <h3>8 Languages</h3>
                 <p>Available in English, Ukrainian, Polish, French, Spanish, German, Czech, and Italian. Full localization with metric and imperial measurement support.</p>
             </div>
@@ -453,22 +462,22 @@
         <h2>Why SipLogger Is Completely Free</h2>
         <div class="features-grid">
             <div class="feature-card">
-                <div class="icon">🆓</div>
+                <div class="icon"><i class="ph-light ph-currency-dollar"></i></div>
                 <h3>No Subscription, No Ads</h3>
                 <p>SipLogger is 100% free with no subscription, no ads, no in-app purchases, and no hidden costs. Every feature is available from day one.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">🔒</div>
+                <div class="icon"><i class="ph-light ph-lock"></i></div>
                 <h3>Complete Privacy</h3>
                 <p>No backend servers. No account required. No analytics in the app. All data stays on your device. Your drinking data is nobody's business but yours.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">🎓</div>
+                <div class="icon"><i class="ph-light ph-book-open-text"></i></div>
                 <h3>Educational Mission</h3>
                 <p>SipLogger exists as an educational and informational tool to help people understand alcohol metabolism. Knowledge promotes responsible decision-making.</p>
             </div>
             <div class="feature-card">
-                <div class="icon">📏</div>
+                <div class="icon"><i class="ph-light ph-ruler"></i></div>
                 <h3>Metric & Imperial</h3>
                 <p>Switch between measurement systems based on your preference — milliliters or fluid ounces, kilograms or pounds.</p>
             </div>

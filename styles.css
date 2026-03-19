@@ -105,157 +105,152 @@ img {
 
 .flying-emoji {
     position: absolute;
-    animation-timing-function: linear;
+    animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     will-change: transform;
+    color: rgba(255, 255, 255, 0.35);
+    line-height: 1;
 }
 
-/* Emojis starting from left edge */
-.flying-emoji.from-left {
-    left: -80px;
-    animation-name: flyFromLeft;
-}
-
-/* Emojis starting from bottom edge */
+/* All emojis rise from bottom like bubbles with gentle horizontal sway */
+.flying-emoji.from-left,
 .flying-emoji.from-bottom {
     bottom: -80px;
-    animation-name: flyFromBottom;
+    animation-name: floatUp;
 }
 
-@keyframes flyFromLeft {
+@keyframes floatUp {
     0% {
-        transform: translateX(0) translateY(0);
+        transform: translateY(0) translateX(0) scale(0.8);
+        opacity: 0;
+    }
+    10% {
+        opacity: var(--emoji-opacity, 0.4);
+    }
+    50% {
+        transform: translateY(calc(-50vh)) translateX(30px) scale(1);
+    }
+    90% {
+        opacity: var(--emoji-opacity, 0.4);
     }
     100% {
-        transform: translateX(calc(100vw + 160px)) translateY(calc(-100vh - 160px));
+        transform: translateY(calc(-110vh)) translateX(-20px) scale(0.9);
+        opacity: 0;
     }
 }
 
-@keyframes flyFromBottom {
-    0% {
-        transform: translateX(0) translateY(0);
-    }
-    100% {
-        transform: translateX(calc(100vw + 160px)) translateY(calc(-100vh - 160px));
-    }
-}
-
-/* 14 emojis - 7 from left edge, 7 from bottom edge */
-
-/* === FROM LEFT EDGE === */
+/* 14 emojis — spread across horizontal positions, staggered timing */
 
 .flying-emoji.e1 {
-    font-size: 44px;
-    top: 5%;
-    opacity: 0.46;
-    animation-duration: 28s;
-    animation-delay: -4s;
+    font-size: 38px;
+    left: 3%;
+    --emoji-opacity: 0.35;
+    animation-duration: 18s;
+    animation-delay: -2s;
 }
 
 .flying-emoji.e2 {
-    font-size: 50px;
-    top: 18%;
-    opacity: 0.5;
-    animation-duration: 32s;
-    animation-delay: -20s;
-}
-
-.flying-emoji.e3 {
-    font-size: 46px;
-    top: 32%;
-    opacity: 0.48;
-    animation-duration: 26s;
-    animation-delay: -10s;
-}
-
-.flying-emoji.e4 {
-    font-size: 54px;
-    top: 46%;
-    opacity: 0.52;
-    animation-duration: 35s;
-    animation-delay: -28s;
-}
-
-.flying-emoji.e5 {
-    font-size: 48px;
-    top: 60%;
-    opacity: 0.5;
-    animation-duration: 30s;
-    animation-delay: -6s;
-}
-
-.flying-emoji.e6 {
-    font-size: 52px;
-    top: 75%;
-    opacity: 0.48;
-    animation-duration: 38s;
-    animation-delay: -22s;
-}
-
-.flying-emoji.e7 {
-    font-size: 46px;
-    top: 90%;
-    opacity: 0.45;
-    animation-duration: 33s;
+    font-size: 44px;
+    left: 12%;
+    --emoji-opacity: 0.4;
+    animation-duration: 22s;
     animation-delay: -14s;
 }
 
-/* === FROM BOTTOM EDGE === */
+.flying-emoji.e3 {
+    font-size: 36px;
+    left: 20%;
+    --emoji-opacity: 0.3;
+    animation-duration: 20s;
+    animation-delay: -7s;
+}
 
-.flying-emoji.e8 {
+.flying-emoji.e4 {
     font-size: 48px;
-    left: 8%;
-    opacity: 0.48;
-    animation-duration: 29s;
-    animation-delay: -5s;
-}
-
-.flying-emoji.e9 {
-    font-size: 52px;
-    left: 22%;
-    opacity: 0.5;
-    animation-duration: 34s;
-    animation-delay: -24s;
-}
-
-.flying-emoji.e10 {
-    font-size: 46px;
-    left: 36%;
-    opacity: 0.48;
-    animation-duration: 27s;
-    animation-delay: -12s;
-}
-
-.flying-emoji.e11 {
-    font-size: 54px;
-    left: 50%;
-    opacity: 0.52;
-    animation-duration: 36s;
-    animation-delay: -30s;
-}
-
-.flying-emoji.e12 {
-    font-size: 48px;
-    left: 64%;
-    opacity: 0.48;
-    animation-duration: 31s;
-    animation-delay: -8s;
-}
-
-.flying-emoji.e13 {
-    font-size: 50px;
-    left: 78%;
-    opacity: 0.46;
-    animation-duration: 28s;
+    left: 28%;
+    --emoji-opacity: 0.35;
+    animation-duration: 25s;
     animation-delay: -18s;
 }
 
-.flying-emoji.e14 {
+.flying-emoji.e5 {
+    font-size: 40px;
+    left: 37%;
+    --emoji-opacity: 0.38;
+    animation-duration: 19s;
+    animation-delay: -4s;
+}
+
+.flying-emoji.e6 {
     font-size: 46px;
-    left: 92%;
-    opacity: 0.45;
-    animation-duration: 32s;
-    animation-delay: -2s;
+    left: 45%;
+    --emoji-opacity: 0.32;
+    animation-duration: 24s;
+    animation-delay: -16s;
+}
+
+.flying-emoji.e7 {
+    font-size: 34px;
+    left: 53%;
+    --emoji-opacity: 0.36;
+    animation-duration: 17s;
+    animation-delay: -9s;
+}
+
+.flying-emoji.e8 {
+    font-size: 42px;
+    left: 60%;
+    --emoji-opacity: 0.34;
+    animation-duration: 21s;
+    animation-delay: -3s;
+}
+
+.flying-emoji.e9 {
+    font-size: 50px;
+    left: 67%;
+    --emoji-opacity: 0.4;
+    animation-duration: 26s;
+    animation-delay: -20s;
+}
+
+.flying-emoji.e10 {
+    font-size: 36px;
+    left: 74%;
+    --emoji-opacity: 0.3;
+    animation-duration: 18s;
+    animation-delay: -11s;
+}
+
+.flying-emoji.e11 {
+    font-size: 44px;
+    left: 80%;
+    --emoji-opacity: 0.38;
+    animation-duration: 23s;
+    animation-delay: -6s;
+}
+
+.flying-emoji.e12 {
+    font-size: 38px;
+    left: 86%;
+    --emoji-opacity: 0.32;
+    animation-duration: 20s;
+    animation-delay: -15s;
+}
+
+.flying-emoji.e13 {
+    font-size: 46px;
+    left: 91%;
+    --emoji-opacity: 0.36;
+    animation-duration: 22s;
+    animation-delay: -1s;
+}
+
+.flying-emoji.e14 {
+    font-size: 40px;
+    left: 96%;
+    --emoji-opacity: 0.34;
+    animation-duration: 19s;
+    animation-delay: -12s;
 }
 
 /* Ensure hero content stays above emojis */
@@ -352,7 +347,7 @@ img {
 
 .screenshot-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 1.5rem;
     max-width: 100%;
     margin: 0 auto;
@@ -418,6 +413,8 @@ img {
 .feature-card .icon {
     font-size: 2.5rem;
     margin-bottom: 1rem;
+    color: var(--accent-primary);
+    line-height: 1;
 }
 
 .feature-card h3 {
