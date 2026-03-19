@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SipLogger — Free BAC Calculator & Drink Tracker App 2026</title>
+    <meta name="description" content="Free educational BAC calculator & drink tracker for iPhone & iPad. Estimated BAC curve, Widmark formula, 40+ drinks, HealthKit integration. No ads, no account, no data collection.">
+    <meta name="keywords" content="BAC calculator app, blood alcohol content tracker, drink tracker, alcohol metabolism, Widmark formula, Watson TBW, BAC chart, drink diary, educational BAC app, responsible drinking app, HealthKit alcohol, free BAC calculator 2026, estimated BAC, alcohol tracker iPhone">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
+    <style>
+    /* Critical CSS — hero & above-fold layout */
+    :root{color-scheme:light;--accent-primary:#9E85EB;--gradient-start:#2a1f5e;--gradient-end:#5b3a6b;--text-dark:#1a1a1a;--text-muted:#666;--bg-light:#f8f9fa;--bg-white:#fff;--card-bg:#fff;--card-shadow:0 4px 20px rgba(0,0,0,.08)}
+    html[data-theme="dark"]{--accent-primary:#B8A0F0;--gradient-start:#0d091c;--gradient-end:#1e1b5b;--text-dark:#f0f0f0;--text-muted:#a0a0a0;--bg-light:#110d22;--bg-white:#1a1530;--card-bg:#1a1530;--card-shadow:0 4px 20px rgba(0,0,0,.3);color-scheme:dark}
+    @media(prefers-color-scheme:dark){html[data-theme="system"]{--accent-primary:#B8A0F0;--gradient-start:#0d091c;--gradient-end:#1e1b5b;--text-dark:#f0f0f0;--text-muted:#a0a0a0;--bg-light:#110d22;--bg-white:#1a1530;--card-bg:#1a1530;--card-shadow:0 4px 20px rgba(0,0,0,.3);color-scheme:dark}}
+    *{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;color:var(--text-dark);line-height:1.6;overflow-x:hidden}img{max-width:100%;height:auto}
+    .hero{min-height:100vh;background:linear-gradient(135deg,var(--gradient-start) 0%,var(--gradient-end) 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;color:#fff;position:relative;overflow:hidden}
+    .hero h1{font-size:3.5rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.02em;position:relative;z-index:1}
+    .hero .tagline{font-size:1.5rem;opacity:.9;margin-bottom:.5rem;font-weight:300;position:relative;z-index:1}
+    .hero .hero-subtitle{font-size:1.1rem;opacity:.8;margin-bottom:1rem;font-weight:400;position:relative;z-index:1}
+    .hero .hero-disclaimer{font-size:.85rem;opacity:.6;margin-bottom:.5rem;font-weight:400;font-style:italic;position:relative;z-index:1}
+    .app-store-badge{margin-top:1.5rem;position:relative;z-index:1}.app-store-badge img{height:54px}
+    .theme-toggle{position:fixed;top:.75rem;right:.75rem;z-index:100}
+    .theme-toggle-group{display:inline-flex;background:rgba(0,0,0,.25);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:999px;padding:2px;gap:2px}
+    .theme-toggle-group button{background:none;border:none;padding:5px 7px;border-radius:999px;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:.4}
+    .theme-toggle-group button.active{background:rgba(255,255,255,.15);opacity:1}
+    .theme-toggle-group svg{width:14px;height:14px;fill:none;stroke:#f0f0f0;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .flying-emojis{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;overflow:hidden;z-index:0}
+    .flying-emoji{position:absolute;animation-timing-function:linear;animation-iteration-count:infinite;will-change:transform}
+    @media(max-width:768px){.hero{min-height:auto;padding:4rem 1.5rem}.hero h1{font-size:2.2rem}.hero .tagline{font-size:1.1rem}.hero .hero-subtitle{font-size:.95rem}}
+    @media(max-width:480px){.hero{padding:3rem 1rem}.hero h1{font-size:1.8rem}.hero .tagline{font-size:1rem}.app-store-badge img{height:44px}}
+    </style>
+    <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('siplogger_theme')||'system')</script>
+    <link rel="preload" as="image" type="image/webp" href="images/screenshot-1.webp">
+    <link rel="canonical" href="https://siplogger.app/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="SipLogger — Free BAC Calculator & Drink Tracker 2026">
+    <meta property="og:description" content="Free educational BAC calculator & drink tracker. Estimated BAC curve, Widmark formula, 40+ drinks, HealthKit. No ads, no account.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://siplogger.app/">
+    <meta property="og:image" content="https://siplogger.app/images/og-image.png">
+    <meta property="og:site_name" content="SipLogger">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SipLogger — Free BAC Calculator & Drink Tracker 2026">
+    <meta name="twitter:description" content="Free educational BAC calculator & alcohol metabolism tracker. Estimated BAC curve, no ads, no data collection.">
+    <meta name="twitter:image" content="https://siplogger.app/images/og-image.png">
+
+    <!-- Apple Smart App Banner -->
+    <meta name="apple-itunes-app" content="app-id=6758573311">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Google Analytics 4 with Consent Mode -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J46TGYRM40');
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Organization",
+                "@id": "https://siplogger.app/#organization",
+                "name": "SipLogger",
+                "url": "https://siplogger.app",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://siplogger.app/images/logo.png"
+                },
+                "sameAs": [
+                    "https://apps.apple.com/us/app/siplogger/id6758573311"
+                ],
+                "parentOrganization": {
+                    "@type": "Organization",
+                    "name": "Unibrix",
+                    "url": "https://unibrix.com"
+                }
+            },
+            {
+                "@type": "WebSite",
+                "@id": "https://siplogger.app/#website",
+                "url": "https://siplogger.app",
+                "name": "SipLogger",
+                "description": "Free educational BAC calculator and drink tracker app for iOS",
+                "publisher": {
+                    "@id": "https://siplogger.app/#organization"
+                }
+            },
+            {
+                "@type": "MobileApplication",
+                "@id": "https://siplogger.app/#app",
+                "name": "SipLogger",
+                "description": "Free educational BAC calculator and drink tracker for iPhone and iPad. Uses Watson TBW and Widmark formula to estimate blood alcohol content over time. Features real-time BAC curve, 40+ built-in drinks, HealthKit integration, Live Activities, and session history. No ads, no account, no data collection.",
+                "applicationCategory": "HealthApplication",
+                "applicationSubCategory": "Educational BAC Tracking",
+                "operatingSystem": "iOS 17.0+",
+                "availableOnDevice": ["iPhone", "iPad"],
+                "contentRating": "17+",
+                "datePublished": "2026-03-19",
+                "inLanguage": ["en", "uk", "pl", "fr", "es", "de", "cs", "it"],
+                "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "USD",
+                    "availability": "https://schema.org/InStock",
+                    "seller": {
+                        "@id": "https://siplogger.app/#organization"
+                    }
+                },
+                "installUrl": "https://apps.apple.com/us/app/siplogger/id6758573311",
+                "featureList": [
+                    "Real-time estimated BAC curve visualization",
+                    "Watson TBW and Widmark formula calculations",
+                    "40+ built-in drink templates",
+                    "Drink pace modeling and timing",
+                    "HealthKit integration (read-only: weight, height, sex, age)",
+                    "Session history and drink diary",
+                    "Live Activities for active sessions",
+                    "Multilingual support (8 languages)",
+                    "Metric and imperial units",
+                    "No account required",
+                    "No backend servers — complete privacy",
+                    "No ads, no subscription, 100% free"
+                ],
+                "screenshot": [
+                    {
+                        "@type": "ImageObject",
+                        "url": "https://siplogger.app/images/screenshot-1.png",
+                        "caption": "SipLogger active session — real-time estimated BAC tracking with drink timeline"
+                    },
+                    {
+                        "@type": "ImageObject",
+                        "url": "https://siplogger.app/images/screenshot-2.png",
+                        "caption": "SipLogger estimated BAC chart — visualize alcohol metabolism over time"
+                    },
+                    {
+                        "@type": "ImageObject",
+                        "url": "https://siplogger.app/images/screenshot-3.png",
+                        "caption": "SipLogger add drink — choose from 40+ built-in drink templates"
+                    },
+                    {
+                        "@type": "ImageObject",
+                        "url": "https://siplogger.app/images/screenshot-4.png",
+                        "caption": "SipLogger session history — review past drinking sessions and patterns"
+                    }
+                ],
+                "keywords": "BAC calculator, blood alcohol content, drink tracker, alcohol metabolism, Widmark formula, Watson TBW, BAC chart, educational BAC app, free BAC calculator, drink diary, responsible drinking",
+                "creator": {
+                    "@id": "https://siplogger.app/#organization"
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "@id": "https://siplogger.app/#faq",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is SipLogger really free?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, SipLogger is 100% free with no subscription fees, no ads, and no in-app purchases. It is an educational tool for understanding alcohol metabolism. All features are available immediately with no restrictions."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does the estimated BAC calculation work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "SipLogger uses the Watson Total Body Water (TBW) method combined with the Widmark formula to estimate blood alcohol content. The calculation considers your weight, height, biological sex, and age to model how alcohol is absorbed and metabolized over time. Results are estimates with approximately ±20% accuracy and are for educational and informational purposes only."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How accurate is the estimated BAC?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The estimated BAC has approximately ±20% accuracy. Individual metabolism varies based on many factors including food intake, hydration, medications, liver health, and genetics. SipLogger is for educational and informational purposes only — never use estimated BAC to make decisions about driving or operating machinery."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does SipLogger tell me when I'm safe to drive?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. SipLogger is an educational tool and never provides driving advice. The app shows when your estimated BAC approaches baseline levels, but this should never be used to determine fitness to drive. Always use a certified breathalyzer or wait a safe amount of time before driving. When in doubt, use a taxi or rideshare."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is my data private with SipLogger?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. HealthKit data (weight, height, sex, age) is read-only and never leaves your device. The app contains no analytics, no tracking, and no third-party SDKs."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What HealthKit data does SipLogger use?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared with anyone. SipLogger never writes data to HealthKit."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How many drinks are in the built-in database?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "SipLogger includes 40+ built-in drink templates covering beer, wine, spirits, cocktails, and more. Each template has pre-configured volume and alcohol percentage. You can also create custom drinks with any volume and ABV percentage."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the Widmark formula?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Widmark formula is a well-established pharmacokinetic model for estimating blood alcohol content (BAC). It calculates BAC based on the amount of alcohol consumed, body weight, a gender-specific distribution ratio, and time elapsed. SipLogger enhances this with the Watson Total Body Water method for improved body water estimation."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does SipLogger work on iPad?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, SipLogger is a universal app that works on both iPhone and iPad. The interface adapts to larger screens for a comfortable experience on iPad."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What age rating does SipLogger have?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "SipLogger is rated 17+ on the App Store. The app is intended for adults of legal drinking age. It is an educational and informational tool — it does not encourage or promote alcohol consumption."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "HowTo",
+                "@id": "https://siplogger.app/#howto",
+                "name": "How to Track Estimated BAC with SipLogger",
+                "description": "Use SipLogger's educational BAC calculator in 3 simple steps.",
+                "totalTime": "PT2M",
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "position": 1,
+                        "name": "Set Up Your Profile",
+                        "text": "Enter your weight, height, biological sex, and age — or let SipLogger read them from HealthKit. These parameters are used in the Watson TBW and Widmark formula for more accurate estimated BAC calculations.",
+                        "image": "https://siplogger.app/images/screenshot-1.png"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 2,
+                        "name": "Log Your Drinks",
+                        "text": "Choose from 40+ built-in drink templates or create a custom drink. SipLogger records the time, volume, and alcohol percentage of each drink to model absorption and metabolism in real time.",
+                        "image": "https://siplogger.app/images/screenshot-3.png"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "position": 3,
+                        "name": "Review Your Sessions",
+                        "text": "View your estimated BAC curve, see when your level approaches baseline, and review session history. Use this educational data to understand how alcohol affects your body over time.",
+                        "image": "https://siplogger.app/images/screenshot-2.png"
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://siplogger.app/#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://siplogger.app/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="theme-toggle">
+        <div class="theme-toggle-group" role="radiogroup" aria-label="Theme">
+            <button type="button" data-theme-value="light" role="radio" aria-checked="false" aria-label="Light theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
+            <button type="button" data-theme-value="dark" role="radio" aria-checked="false" aria-label="Dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+            <button type="button" data-theme-value="system" role="radio" aria-checked="true" aria-label="System theme"><svg class="icon-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg><svg class="icon-mobile" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></button>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <p>We use cookies for analytics to improve your experience. No personal data is collected.</p>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="cookie-btn accept">Accept</button>
+                <button id="cookie-reject" class="cookie-btn reject">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Flying Emojis Background -->
+        <div class="flying-emojis" aria-hidden="true">
+            <!-- From left edge (7) -->
+            <span class="flying-emoji from-left e1"></span>
+            <span class="flying-emoji from-left e2"></span>
+            <span class="flying-emoji from-left e3"></span>
+            <span class="flying-emoji from-left e4"></span>
+            <span class="flying-emoji from-left e5"></span>
+            <span class="flying-emoji from-left e6"></span>
+            <span class="flying-emoji from-left e7"></span>
+            <!-- From bottom edge (7) -->
+            <span class="flying-emoji from-bottom e8"></span>
+            <span class="flying-emoji from-bottom e9"></span>
+            <span class="flying-emoji from-bottom e10"></span>
+            <span class="flying-emoji from-bottom e11"></span>
+            <span class="flying-emoji from-bottom e12"></span>
+            <span class="flying-emoji from-bottom e13"></span>
+            <span class="flying-emoji from-bottom e14"></span>
+        </div>
+
+        <h1>SipLogger — Free BAC Calculator & Alcohol Metabolism Tracker</h1>
+        <p class="tagline">Track Drinks. See Your Estimated BAC Curve. 100% Free.</p>
+        <p class="hero-subtitle">Educational alcohol metabolism tracker for iPhone & iPad. No account. No ads. No data collection.</p>
+        <p class="hero-disclaimer">For educational & informational purposes only. Rated 17+.</p>
+
+        <a href="https://apps.apple.com/us/app/siplogger/id6758573311" class="app-store-badge" aria-label="Download SipLogger on the App Store">
+            <img src="images/download-on-the-app-store.svg" alt="Download SipLogger - Free BAC Calculator on the App Store">
+        </a>
+    </section>
+
+    <!-- Flying Emojis Randomizer -->
+    <script>
+    const DRINK_EMOJIS = [
+        "\ud83c\udf7a", "\ud83c\udf7b", "\ud83c\udf77", "\ud83e\udd42", "\ud83c\udf78", "\ud83c\udf79", "\ud83c\udf7e", "\ud83e\udd43", "\ud83e\uddca", "\ud83e\udec7", "\ud83c\udf76", "\ud83e\udd64", "\ud83e\udee7"
+    ];
+    const randomEmoji = () => DRINK_EMOJIS[Math.floor(Math.random() * DRINK_EMOJIS.length)];
+    document.querySelectorAll('.flying-emoji').forEach(el => {
+        el.textContent = randomEmoji();
+        el.addEventListener('animationiteration', () => el.textContent = randomEmoji());
+    });
+    </script>
+
+    <!-- Intro Section -->
+    <section class="intro">
+        <p>Looking for a <strong>free BAC calculator</strong> that visualizes alcohol metabolism over time? SipLogger is a <strong>free educational estimated BAC tracker</strong> for <strong>iPhone and iPad</strong>. Log your drinks, and see a real-time <strong>estimated BAC curve</strong> powered by the <strong>Watson Total Body Water method</strong> and the <strong>Widmark formula</strong>. Choose from <strong>40+ built-in drinks</strong> or create custom entries. Track your <strong>drink pace</strong>, review <strong>session history</strong>, and understand how your body processes alcohol — all with <strong>HealthKit integration</strong> for personalized calculations and <strong>Live Activities</strong> for at-a-glance monitoring. No subscription. No ads. No account. No data collection. SipLogger is a purely <strong>educational and informational</strong> tool designed to promote <strong>responsible drinking awareness</strong>. Available in 8 languages with metric and imperial support. Estimated BAC accuracy is approximately ±20%.</p>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="screenshots">
+        <h2>See the Educational BAC Calculator in Action</h2>
+        <div class="screenshot-container">
+            <img src="images/screenshot-1.webp" alt="SipLogger active session — real-time estimated BAC tracking with drink timeline and metabolism curve" width="560" height="1213" fetchpriority="high">
+            <img src="images/screenshot-2.webp" alt="SipLogger estimated BAC chart — visualize alcohol metabolism over time with Widmark formula" width="560" height="1213" loading="lazy">
+            <img src="images/screenshot-3.webp" alt="SipLogger add drink — choose from 40+ built-in drink templates with custom volume and ABV" width="560" height="1213" loading="lazy">
+            <img src="images/screenshot-4.webp" alt="SipLogger session history — review past drinking sessions and estimated BAC patterns" width="560" height="1213" loading="lazy">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2>Educational BAC Tracking — Powerful Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">📈</div>
+                <h3>Real-Time Estimated BAC Curve</h3>
+                <p>Watch your estimated blood alcohol content rise and fall in real time. The educational BAC chart shows absorption, peak, and metabolism phases as a smooth curve — helping you understand how alcohol affects your body over time.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🧪</div>
+                <h3>Watson + Widmark Formulas</h3>
+                <p>SipLogger uses the Watson Total Body Water method combined with the Widmark formula for scientifically-grounded estimated BAC calculations. Personalized using your weight, height, biological sex, and age. Estimated accuracy is ±20%.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🍺</div>
+                <h3>40+ Built-In Drinks</h3>
+                <p>Choose from a curated library of 40+ drink templates — beer, wine, spirits, cocktails, and more. Each has pre-configured volume and ABV. Create custom drinks with any volume and alcohol percentage.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⏱️</div>
+                <h3>Drink Pace Modeling</h3>
+                <p>SipLogger models each drink's absorption timing individually. See how spacing your drinks affects your estimated BAC curve — an educational tool for understanding alcohol metabolism rates.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">❤️</div>
+                <h3>HealthKit Integration</h3>
+                <p>Optionally read weight, height, biological sex, and age from Apple HealthKit for more accurate educational estimates. Read-only — SipLogger never writes to HealthKit and never transmits your health data.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📋</div>
+                <h3>Session History & Diary</h3>
+                <p>Review past sessions with detailed drink logs, estimated peak BAC, session duration, and time to approach baseline. A personal educational diary of your drinking patterns.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔴</div>
+                <h3>Live Activities</h3>
+                <p>Monitor your active session from the Lock Screen and Dynamic Island with Live Activities. See your current estimated BAC and time to approach baseline at a glance.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🌍</div>
+                <h3>8 Languages</h3>
+                <p>Available in English, Ukrainian, Polish, French, Spanish, German, Czech, and Italian. Full localization with metric and imperial measurement support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <h2>How the Educational BAC Calculator Works</h2>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Set Up Your Profile</h3>
+                <p>Enter your weight, height, sex, and age — or let SipLogger read them from HealthKit. These values personalize the Watson + Widmark formula.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Log Your Drinks</h3>
+                <p>Pick from 40+ templates or create custom drinks. Each drink is timestamped for accurate absorption modeling in the estimated BAC calculation.</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Review Your Sessions</h3>
+                <p>See your estimated BAC curve, review session history, and learn how different drinking patterns affect estimated alcohol metabolism.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Free Section -->
+    <section class="features">
+        <h2>Why SipLogger Is Completely Free</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">🆓</div>
+                <h3>No Subscription, No Ads</h3>
+                <p>SipLogger is 100% free with no subscription, no ads, no in-app purchases, and no hidden costs. Every feature is available from day one.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🔒</div>
+                <h3>Complete Privacy</h3>
+                <p>No backend servers. No account required. No analytics in the app. All data stays on your device. Your drinking data is nobody's business but yours.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎓</div>
+                <h3>Educational Mission</h3>
+                <p>SipLogger exists as an educational and informational tool to help people understand alcohol metabolism. Knowledge promotes responsible decision-making.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📏</div>
+                <h3>Metric & Imperial</h3>
+                <p>Switch between measurement systems based on your preference — milliliters or fluid ounces, kilograms or pounds.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Disclaimer Banner -->
+    <section class="disclaimer-banner">
+        <h2>⚠️ Important Disclaimer</h2>
+        <p>SipLogger is an <strong>educational and informational tool only</strong>. Estimated BAC values have an accuracy of approximately <strong>±20%</strong> and can vary significantly based on individual factors including food intake, hydration, medications, liver health, and genetics. <strong>Never use estimated BAC to make decisions about driving, operating machinery, or any activity requiring full alertness.</strong> SipLogger does not encourage alcohol consumption. If you choose to drink, always do so responsibly and in accordance with local laws. This app is rated <strong>17+</strong> and is intended for adults of <strong>legal drinking age</strong> only.</p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Is SipLogger really free?</summary>
+                <p>Yes, SipLogger is 100% free with no subscription fees, no ads, and no in-app purchases. It is an educational tool for understanding alcohol metabolism. All features are available immediately with no restrictions.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How does the estimated BAC calculation work?</summary>
+                <p>SipLogger uses the Watson Total Body Water (TBW) method combined with the Widmark formula to estimate blood alcohol content. The calculation considers your weight, height, biological sex, and age to model how alcohol is absorbed and metabolized over time. Results are educational estimates with approximately ±20% accuracy.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How accurate is the estimated BAC?</summary>
+                <p>The estimated BAC has approximately ±20% accuracy. Individual metabolism varies based on many factors including food intake, hydration, medications, liver health, and genetics. SipLogger is for educational and informational purposes only — never use estimated BAC to make decisions about driving or operating machinery.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Does SipLogger tell me when I can drive?</summary>
+                <p>No. SipLogger is an educational tool and never provides driving advice. The app shows when your estimated BAC approaches baseline levels, but this should never be used to determine fitness to drive. Always use a certified breathalyzer or wait a safe amount of time. When in doubt, use a taxi or rideshare.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is my data private?</summary>
+                <p>Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. HealthKit data is read-only and never leaves your device. The app contains no analytics, no tracking, and no third-party SDKs.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What HealthKit data does SipLogger use?</summary>
+                <p>SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared. SipLogger never writes data to HealthKit.</p>
+            </details>
+            <details class="faq-item">
+                <summary>How many drinks are in the built-in database?</summary>
+                <p>SipLogger includes 40+ built-in drink templates covering beer, wine, spirits, cocktails, and more. Each template has pre-configured volume and alcohol percentage. You can also create custom drinks with any volume and ABV percentage.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What is the Widmark formula?</summary>
+                <p>The Widmark formula is a well-established pharmacokinetic model for estimating blood alcohol content. It calculates estimated BAC based on the amount of alcohol consumed, body weight, a gender-specific distribution ratio, and time elapsed. SipLogger enhances this with the Watson Total Body Water method for improved body water estimation, making it a reliable educational tool.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Does SipLogger work on iPad?</summary>
+                <p>Yes, SipLogger is a universal app that works on both iPhone and iPad. The interface adapts to larger screens for a comfortable experience on iPad.</p>
+            </details>
+            <details class="faq-item">
+                <summary>What is the age rating for SipLogger?</summary>
+                <p>SipLogger is rated 17+ on the App Store. The app is intended for adults of legal drinking age. It is an educational and informational tool — it does not encourage or promote alcohol consumption.</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Privacy Highlight -->
+    <section class="privacy-highlight">
+        <h2>Your Privacy Is Absolute</h2>
+        <p>No account required. No backend servers. No analytics. No data collection. All your drink logs and session data stay on your device. HealthKit data is read-only and never transmitted. SipLogger is a completely private, educational tool.</p>
+    </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#" id="cookie-settings">Cookie Settings</a>
+        </div>
+        <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
+        <p class="powered-by">Powered by <a href="https://unibrix.com" target="_blank" rel="noopener">Unibrix</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        var THEME_KEY = 'siplogger_theme';
+        var html = document.documentElement;
+        var buttons = document.querySelectorAll('.theme-toggle-group button');
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            buttons.forEach(function(btn) {
+                var isActive = btn.getAttribute('data-theme-value') === theme;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+            });
+        }
+
+        var saved = localStorage.getItem(THEME_KEY) || 'system';
+        applyTheme(saved);
+
+        buttons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var theme = btn.getAttribute('data-theme-value');
+                localStorage.setItem(THEME_KEY, theme);
+                applyTheme(theme);
+            });
+        });
+    })();
+    </script>
+
+    <!-- Cookie Consent & Analytics Script -->
+    <script>
+    (function() {
+        const CONSENT_KEY = 'siplogger_cookie_consent';
+        const GA_ID = 'G-J46TGYRM40';
+
+        function getConsent() {
+            return localStorage.getItem(CONSENT_KEY);
+        }
+
+        function setConsent(status) {
+            localStorage.setItem(CONSENT_KEY, status);
+        }
+
+        function loadGA() {
+            if (document.getElementById('ga-script')) return;
+            const script = document.createElement('script');
+            script.id = 'ga-script';
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(script);
+        }
+
+        function updateConsent(granted) {
+            if (granted) {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'granted'
+                });
+                loadGA();
+            } else {
+                gtag('consent', 'update', {
+                    'analytics_storage': 'denied'
+                });
+            }
+        }
+
+        function showBanner(show) {
+            document.getElementById('cookie-banner').style.display = show ? 'flex' : 'none';
+        }
+
+        function init() {
+            const consent = getConsent();
+
+            if (consent === null) {
+                showBanner(true);
+            } else if (consent === 'accepted') {
+                updateConsent(true);
+            }
+        }
+
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+            setConsent('accepted');
+            updateConsent(true);
+            showBanner(false);
+        });
+
+        document.getElementById('cookie-reject').addEventListener('click', function() {
+            setConsent('rejected');
+            updateConsent(false);
+            showBanner(false);
+        });
+
+        document.getElementById('cookie-settings').addEventListener('click', function(e) {
+            e.preventDefault();
+            showBanner(true);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        init();
+    })();
+    </script>
+</body>
+</html>
