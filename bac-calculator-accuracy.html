@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How Accurate Are BAC Calculators? What Estimates Can and Can't Tell You</title>
+    <meta name="description" content="An honest look at BAC calculator accuracy: why formula-based estimates carry roughly ±20% variance, the factors that change real blood alcohol levels, and what BAC estimates should never be used for.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('siplogger_theme')||'system')</script>
+    <link rel="canonical" href="https://siplogger.app/bac-calculator-accuracy.html">
+    <link rel="alternate" type="text/markdown" href="https://siplogger.app/bac-calculator-accuracy.html.md" title="Markdown version for AI agents">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="How Accurate Are BAC Calculators?">
+    <meta property="og:description" content="Why formula-based BAC estimates carry roughly ±20% variance, what changes real blood alcohol levels, and what estimates should never be used for.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://siplogger.app/bac-calculator-accuracy.html">
+    <meta property="og:image" content="https://siplogger.app/images/og-image.png">
+    <meta property="og:site_name" content="SipLogger">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="How Accurate Are BAC Calculators?">
+    <meta name="twitter:description" content="Why formula-based BAC estimates carry roughly ±20% variance — and what they should never be used for.">
+    <meta name="twitter:image" content="https://siplogger.app/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Google Analytics 4 with Consent Mode -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J46TGYRM40');
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "@id": "https://siplogger.app/bac-calculator-accuracy.html#article",
+                "headline": "How Accurate Are BAC Calculators? What Estimates Can and Can't Tell You",
+                "description": "Why formula-based BAC estimates carry roughly ±20% variance, the factors that change real blood alcohol levels, and what BAC estimates should never be used for.",
+                "url": "https://siplogger.app/bac-calculator-accuracy.html",
+                "inLanguage": "en",
+                "datePublished": "2026-07-03",
+                "dateModified": "2026-07-03",
+                "author": {
+                    "@id": "https://siplogger.app/#organization"
+                },
+                "publisher": {
+                    "@id": "https://siplogger.app/#organization"
+                },
+                "image": "https://siplogger.app/images/og-image.png",
+                "mainEntityOfPage": "https://siplogger.app/bac-calculator-accuracy.html"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://siplogger.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "BAC Calculator Accuracy",
+                        "item": "https://siplogger.app/bac-calculator-accuracy.html"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Can a BAC calculator replace a breathalyzer?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. A BAC calculator mathematically estimates blood alcohol content from what you log; a certified breathalyzer measures alcohol in your breath. Formula-based estimates carry roughly ±20% variance and can differ substantially from a measured value. For any decision that matters, an estimate is not a measurement — and no app output should ever be used to decide whether it is safe to drive."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why do BAC estimates have around ±20% variance?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The underlying models (Widmark formula, Watson Total Body Water method) are built on population averages, but individuals differ: food in the stomach slows absorption, medications and liver function change elimination speed, hydration and body composition shift alcohol distribution, and real-world pours rarely match nominal drink sizes. Each factor adds error, which is why honest tools state approximately ±20% variance."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Do BAC calculators overestimate or underestimate?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "It can go both ways. Estimates tend to run high if you ate a large meal (slower absorption) and low if drinks were poured generously or had higher alcohol content than the template assumed. Because the direction of the error is unpredictable for any individual session, estimates should be treated as educational approximations only."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is a BAC calculator result legally meaningful?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. Legal contexts rely on evidentiary breath or blood tests administered with calibrated equipment. A consumer app estimate has no legal standing, and being below a legal limit by estimate does not mean you would test below it — or that driving is safe at any level."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="theme-toggle">
+        <div class="theme-toggle-group" role="radiogroup" aria-label="Theme">
+            <button type="button" data-theme-value="light" role="radio" aria-checked="false" aria-label="Light theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
+            <button type="button" data-theme-value="dark" role="radio" aria-checked="false" aria-label="Dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+            <button type="button" data-theme-value="system" role="radio" aria-checked="true" aria-label="System theme"><svg class="icon-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg><svg class="icon-mobile" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></button>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <p>We use cookies for analytics to improve your experience. No personal data is collected.</p>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="cookie-btn accept">Accept</button>
+                <button id="cookie-reject" class="cookie-btn reject">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="article-page">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <h1>How Accurate Are BAC Calculators?</h1>
+        <p class="subtitle">What formula-based estimates can and can't tell you — an honest guide from an app that makes one.</p>
+        <p class="last-updated">Last updated: July 3, 2026</p>
+
+        <h2>The short answer</h2>
+        <p>Formula-based BAC calculators produce <strong>estimates with roughly ±20% variance</strong> — sometimes more. They are genuinely useful for education: understanding how alcohol accumulates, how drink timing changes the curve, and how long metabolism takes. They are <strong>not measurements</strong>, and no calculator output — from SipLogger or any other tool — should ever be used to decide whether it is safe to drive or operate machinery. There is no exception to this, and being "under a limit" by estimate means nothing about actual impairment.</p>
+
+        <h2>Where the variance comes from</h2>
+        <p>BAC calculators are built on pharmacokinetic models — typically the <a href="widmark-formula.html">Widmark formula</a>, often refined with the Watson Total Body Water method. These models are scientifically grounded but describe <em>population averages</em>. Real individuals differ in ways no formula fully captures:</p>
+        <ul>
+            <li><strong>Food.</strong> A full stomach slows alcohol absorption dramatically; the same drinks on an empty stomach produce a higher, earlier peak.</li>
+            <li><strong>Medications and liver function.</strong> Many common medications change how fast alcohol is metabolized; liver health does too.</li>
+            <li><strong>Individual metabolism.</strong> Elimination rates average about 0.015% BAC per hour but genuinely range from roughly 0.010% to 0.020% between people.</li>
+            <li><strong>Body composition.</strong> Alcohol distributes into body water. Two people with the same weight but different body composition will reach different levels from the same drinks.</li>
+            <li><strong>What was actually in the glass.</strong> Real-world pours are not template pours. A "glass of wine" at a restaurant can be 5 or 8 ounces; a cocktail's alcohol content varies with the bartender. Logging error becomes estimation error. Our guide to <a href="standard-drink.html">standard drink sizes</a> covers this in detail.</li>
+            <li><strong>Hydration, fatigue, and other factors</strong> that shift absorption and distribution in smaller ways.</li>
+        </ul>
+
+        <h2>An estimate is not a measurement</h2>
+        <p>It helps to keep three tiers straight:</p>
+        <ul>
+            <li><strong>BAC calculators</strong> (like SipLogger) — mathematical estimates from what you log. Educational value, no measurement.</li>
+            <li><strong>Consumer breathalyzers</strong> — actual measurements of breath alcohol, with quality varying widely by device and calibration.</li>
+            <li><strong>Evidentiary breath/blood tests</strong> — calibrated, professionally administered measurements used in legal and medical contexts.</li>
+        </ul>
+        <p>Only the last two measure anything. A calculator can show you the <em>shape</em> of a session — when your estimated level likely peaked, how long the decline takes — but it cannot tell you your actual BAC at any moment.</p>
+
+        <h2>How SipLogger handles this honestly</h2>
+        <p><a href="index.html">SipLogger</a> is built as an educational tool, and its design reflects the limits above:</p>
+        <ul>
+            <li>Every estimate is labeled an <strong>estimate</strong>, with the ±20% variance stated in the app — not buried in fine print</li>
+            <li>Calculations use the Watson TBW method plus the Widmark formula, personalized by weight, height, biological sex, and age (optionally read from HealthKit)</li>
+            <li>The app shows when your estimated level <strong>approaches baseline</strong> — it never declares you "fine," never gives driving advice, and never frames any level as safe</li>
+            <li>Each drink's absorption is modeled individually by time, so the curve reflects pace, not just totals</li>
+        </ul>
+
+        <h2>What BAC estimates are good for — and what they are not</h2>
+        <p><strong>Good for:</strong> understanding how alcohol metabolism works, seeing how drink pace and spacing change the estimated curve, keeping a private drink diary, and building general awareness of how long alcohol stays in the body.</p>
+        <p><strong>Never for:</strong> deciding whether to drive or operate machinery, "timing" a return to driving after drinking, medical decisions, or anything where actual impairment matters. If you have been drinking, arrange a taxi, rideshare, or designated driver — full stop.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>Can a BAC calculator replace a breathalyzer?</summary>
+                <p>No. A calculator estimates mathematically from what you log; a certified breathalyzer measures alcohol in your breath. Estimates carry roughly ±20% variance and can differ substantially from a measured value — and neither should be used to justify driving after drinking.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Why is the variance around ±20%?</summary>
+                <p>The models are built on population averages, but food intake, medications, liver function, body composition, hydration, and real-world pour sizes all vary by individual and by session. Each factor adds error. Honest tools state this variance up front.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Do BAC calculators overestimate or underestimate?</summary>
+                <p>Both happen. Estimates tend to run high after a large meal (slower absorption) and low when drinks are stronger or larger than the logged template. The direction of error is unpredictable for any given session, which is exactly why estimates are educational only.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is a BAC calculator result legally meaningful?</summary>
+                <p>No. Legal contexts use evidentiary breath or blood tests with calibrated equipment. A consumer app estimate has no legal standing, and an estimate below a legal limit does not mean you would measure below it — or that driving is safe at any level.</p>
+            </details>
+        </div>
+
+        <div class="cta-block">
+            <a href="https://apps.apple.com/us/app/siplogger/id6758573311" class="app-store-badge" aria-label="Download SipLogger on the App Store">
+                <img src="images/download-on-the-app-store.svg" alt="Download SipLogger - Educational BAC Calculator on the App Store">
+            </a>
+        </div>
+
+        <h2>Related reading</h2>
+        <ul>
+            <li><a href="widmark-formula.html">The Widmark formula explained: how BAC is estimated</a></li>
+            <li><a href="standard-drink.html">What is a standard drink? Sizes, ABV math, and country differences</a></li>
+            <li><a href="index.html">SipLogger homepage</a></li>
+        </ul>
+
+        <p class="note-box">SipLogger is strictly an educational and informational tool. It does not measure actual blood alcohol content, and estimated values carry approximately ±20% variance. Never use any BAC estimate to decide whether it is safe to drive or operate machinery. Intended for adults of legal drinking age only. Rated 18+. This app does not encourage alcohol consumption.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#" id="cookie-settings">Cookie Settings</a>
+        </div>
+        <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
+        <p class="powered-by">Powered by <a href="https://unibrix.com" target="_blank" rel="noopener">Unibrix</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        var THEME_KEY = 'siplogger_theme';
+        var html = document.documentElement;
+        var buttons = document.querySelectorAll('.theme-toggle-group button');
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            buttons.forEach(function(btn) {
+                var isActive = btn.getAttribute('data-theme-value') === theme;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+            });
+        }
+
+        var saved = localStorage.getItem(THEME_KEY) || 'system';
+        applyTheme(saved);
+
+        buttons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var theme = btn.getAttribute('data-theme-value');
+                localStorage.setItem(THEME_KEY, theme);
+                applyTheme(theme);
+            });
+        });
+    })();
+    </script>
+
+    <!-- Cookie Consent & Analytics Script -->
+    <script>
+    (function() {
+        const CONSENT_KEY = 'siplogger_cookie_consent';
+        const GA_ID = 'G-J46TGYRM40';
+
+        function getConsent() {
+            return localStorage.getItem(CONSENT_KEY);
+        }
+
+        function setConsent(status) {
+            localStorage.setItem(CONSENT_KEY, status);
+        }
+
+        function loadGA() {
+            if (document.getElementById('ga-script')) return;
+            const script = document.createElement('script');
+            script.id = 'ga-script';
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(script);
+        }
+
+        function updateConsent(granted) {
+            if (granted) {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+                loadGA();
+            } else {
+                gtag('consent', 'update', { 'analytics_storage': 'denied' });
+            }
+        }
+
+        function showBanner(show) {
+            document.getElementById('cookie-banner').style.display = show ? 'flex' : 'none';
+        }
+
+        function init() {
+            const consent = getConsent();
+            if (consent === null) {
+                showBanner(true);
+            } else if (consent === 'accepted') {
+                updateConsent(true);
+            }
+        }
+
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+            setConsent('accepted');
+            updateConsent(true);
+            showBanner(false);
+        });
+
+        document.getElementById('cookie-reject').addEventListener('click', function() {
+            setConsent('rejected');
+            updateConsent(false);
+            showBanner(false);
+        });
+
+        document.getElementById('cookie-settings').addEventListener('click', function(e) {
+            e.preventDefault();
+            showBanner(true);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // App Store clicks -> GA4 event (mark "app_store_click" as a key event in GA4 admin)
+        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                gtag('event', 'app_store_click', { 'link_url': link.href });
+            });
+        });
+
+        init();
+    })();
+    </script>
+</body>
+</html>

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What Is a Standard Drink? Sizes, ABV Math, and Country Differences</title>
+    <meta name="description" content="What counts as one standard drink: US 14g definition with beer, wine, and spirits examples, the volume × ABV math, how definitions differ by country, and why cocktails are usually more than one.">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="styles.css?v=2">
+    <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('siplogger_theme')||'system')</script>
+    <link rel="canonical" href="https://siplogger.app/standard-drink.html">
+    <link rel="alternate" type="text/markdown" href="https://siplogger.app/standard-drink.html.md" title="Markdown version for AI agents">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="What Is a Standard Drink? Sizes, ABV Math, and Country Differences">
+    <meta property="og:description" content="The US 14g standard drink with examples, the volume × ABV math, country differences, and why cocktails usually count as more than one.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://siplogger.app/standard-drink.html">
+    <meta property="og:image" content="https://siplogger.app/images/og-image.png">
+    <meta property="og:site_name" content="SipLogger">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="What Is a Standard Drink?">
+    <meta name="twitter:description" content="Standard drink sizes, the volume × ABV math, and why cocktails usually count as more than one.">
+    <meta name="twitter:image" content="https://siplogger.app/images/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+
+    <!-- Google Analytics 4 with Consent Mode -->
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+        'analytics_storage': 'denied',
+        'ad_storage': 'denied',
+        'wait_for_update': 500
+    });
+    gtag('js', new Date());
+    gtag('config', 'G-J46TGYRM40');
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "@id": "https://siplogger.app/standard-drink.html#article",
+                "headline": "What Is a Standard Drink? Sizes, ABV Math, and Country Differences",
+                "description": "What counts as one standard drink: the US 14g definition with examples, the volume × ABV math, how definitions differ by country, and why cocktails usually count as more than one.",
+                "url": "https://siplogger.app/standard-drink.html",
+                "inLanguage": "en",
+                "datePublished": "2026-07-03",
+                "dateModified": "2026-07-03",
+                "author": {
+                    "@id": "https://siplogger.app/#organization"
+                },
+                "publisher": {
+                    "@id": "https://siplogger.app/#organization"
+                },
+                "image": "https://siplogger.app/images/og-image.png",
+                "mainEntityOfPage": "https://siplogger.app/standard-drink.html"
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://siplogger.app/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Standard Drink",
+                        "item": "https://siplogger.app/standard-drink.html"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "How do I calculate how many standard drinks are in any beverage?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Multiply volume (ml) × ABV (as a decimal) × 0.789 to get grams of pure alcohol, then divide by your country's standard (14 g in the US). Example: a 473 ml pint of 8% IPA = 473 × 0.08 × 0.789 ≈ 30 g ≈ just over 2 US standard drinks."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is a cocktail one standard drink?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Usually not. A classic margarita or martini typically contains 1.5-2+ US standard drinks, and stronger cocktails like a Long Island Iced Tea can contain 2-4. Recipes and bartender pours vary widely, which makes cocktails one of the biggest sources of undercounting."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Why do standard drink definitions differ by country?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The definitions are public-health conventions, not physical constants. The UK defines one unit as 8 g of pure alcohol, Australia uses 10 g, and the US uses 14 g. The same glass of wine therefore counts as a different number of drinks depending on the country's standard."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does one standard drink equal a specific BAC?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. The estimated BAC from one standard drink depends on body weight, body composition, biological sex, food intake, and timing. Pharmacokinetic models like the Widmark formula can estimate it for a specific person, but the result is an educational approximation with roughly ±20% variance — never a basis for decisions about driving."
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <div class="theme-toggle">
+        <div class="theme-toggle-group" role="radiogroup" aria-label="Theme">
+            <button type="button" data-theme-value="light" role="radio" aria-checked="false" aria-label="Light theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
+            <button type="button" data-theme-value="dark" role="radio" aria-checked="false" aria-label="Dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
+            <button type="button" data-theme-value="system" role="radio" aria-checked="true" aria-label="System theme"><svg class="icon-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg><svg class="icon-mobile" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></button>
+        </div>
+    </div>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <div class="cookie-content">
+            <p>We use cookies for analytics to improve your experience. No personal data is collected.</p>
+            <div class="cookie-buttons">
+                <button id="cookie-accept" class="cookie-btn accept">Accept</button>
+                <button id="cookie-reject" class="cookie-btn reject">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <main class="article-page">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <h1>What Is a Standard Drink?</h1>
+        <p class="subtitle">Sizes, the ABV math, how definitions differ by country — and why "I had three drinks" is less precise than it sounds.</p>
+        <p class="last-updated">Last updated: July 3, 2026</p>
+
+        <h2>The US definition</h2>
+        <p>In the United States, one standard drink contains about <strong>14 grams (0.6 fl oz) of pure alcohol</strong>. That is roughly:</p>
+        <ul>
+            <li><strong>12 oz (355 ml) of beer</strong> at 5% ABV</li>
+            <li><strong>5 oz (148 ml) of wine</strong> at 12% ABV</li>
+            <li><strong>1.5 oz (44 ml) of spirits</strong> at 40% ABV</li>
+        </ul>
+        <p>The point of the convention: those three very different-looking servings deliver approximately the same alcohol. Your body doesn't care whether the 14 grams arrived as beer or bourbon.</p>
+
+        <h2>The math for any drink</h2>
+        <p>Pure alcohol doesn't come labeled in grams, but it is easy to compute from the label:</p>
+        <p><strong>grams of alcohol = volume (ml) × ABV (decimal) × 0.789</strong></p>
+        <p>(0.789 g/ml is the density of ethanol.) Two examples:</p>
+        <ul>
+            <li>A 473 ml (16 oz) pint of 8% craft IPA: 473 × 0.08 × 0.789 ≈ <strong>30 g ≈ 2.1 US standard drinks</strong> — one pint, two drinks</li>
+            <li>A generous 200 ml restaurant pour of 14% red wine: 200 × 0.14 × 0.789 ≈ <strong>22 g ≈ 1.6 standard drinks</strong></li>
+        </ul>
+        <p>This is why casual counting drifts: modern craft beers, large wine pours, and cocktails all routinely exceed one standard drink per glass.</p>
+
+        <h2>Country differences</h2>
+        <p>"Standard drink" is a public-health convention, and countries define it differently:</p>
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Grams of pure alcohol per standard drink/unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>United Kingdom (1 unit)</td><td>8 g</td></tr>
+                    <tr><td>Australia</td><td>10 g</td></tr>
+                    <tr><td>Canada</td><td>≈ 13.5 g</td></tr>
+                    <tr><td>United States</td><td>14 g</td></tr>
+                    <tr><td>Japan (1 go-based unit)</td><td>≈ 20 g</td></tr>
+                </tbody>
+            </table>
+        </div>
+        <p>The same 5 oz glass of wine is therefore "one drink" in the US but about 1.7 units in the UK. When reading guidance from another country, check which definition it uses.</p>
+
+        <h2>Cocktails: the big undercount</h2>
+        <p>Cocktails are where drink counting fails most often. A classic margarita or martini typically contains <strong>1.5–2+ US standard drinks</strong>; a Long Island Iced Tea can contain <strong>2–4</strong>. Recipes vary, bartenders pour differently, and the mixer volume hides the alcohol. Logging a cocktail as "one drink" can understate actual alcohol by half or more — which then flows directly into any <a href="bac-calculator-accuracy.html">BAC estimate's error</a>.</p>
+
+        <h2>How SipLogger uses this</h2>
+        <p><a href="index.html">SipLogger</a> ships with <strong>40+ drink templates</strong> — beers, wines, spirits, and cocktails — each pre-configured with realistic volume and ABV, so a logged drink carries its actual estimated alcohol content into the <a href="widmark-formula.html">Widmark-based calculation</a> rather than a vague "one drink" unit. For anything unusual, you can create custom drinks with any volume and ABV. Better inputs make the educational estimate more meaningful — though it always remains an estimate with roughly ±20% variance, never a measurement.</p>
+
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+            <details class="faq-item">
+                <summary>How do I calculate standard drinks in any beverage?</summary>
+                <p>Multiply volume (ml) × ABV (decimal) × 0.789 to get grams of pure alcohol, then divide by your country's standard (14 g in the US). A 473 ml pint of 8% IPA works out to about 30 g — just over 2 US standard drinks.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Is a cocktail one standard drink?</summary>
+                <p>Usually not. A margarita or martini is typically 1.5–2+ US standard drinks; a Long Island Iced Tea can be 2–4. Recipes and pours vary widely, making cocktails the most commonly undercounted drink.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Why do definitions differ by country?</summary>
+                <p>They are public-health conventions, not physical constants. The UK unit is 8 g, Australia's standard drink is 10 g, the US uses 14 g. The same glass counts differently depending on whose standard you apply.</p>
+            </details>
+            <details class="faq-item">
+                <summary>Does one standard drink equal a specific BAC?</summary>
+                <p>No. The estimated BAC from one drink depends on body weight, composition, biological sex, food, and timing. Models like the Widmark formula can estimate it for a specific person — as an educational approximation with roughly ±20% variance, never a basis for driving decisions.</p>
+            </details>
+        </div>
+
+        <div class="cta-block">
+            <a href="https://apps.apple.com/us/app/siplogger/id6758573311" class="app-store-badge" aria-label="Download SipLogger on the App Store">
+                <img src="images/download-on-the-app-store.svg" alt="Download SipLogger - Educational BAC Calculator on the App Store">
+            </a>
+        </div>
+
+        <h2>Related reading</h2>
+        <ul>
+            <li><a href="widmark-formula.html">The Widmark formula explained: how BAC is estimated</a></li>
+            <li><a href="bac-calculator-accuracy.html">How accurate are BAC calculators?</a></li>
+            <li><a href="index.html">SipLogger homepage</a></li>
+        </ul>
+
+        <p class="note-box">SipLogger is strictly an educational and informational tool. It does not measure actual blood alcohol content, and estimated values carry approximately ±20% variance. Never use any BAC estimate to decide whether it is safe to drive or operate machinery. Intended for adults of legal drinking age only. Rated 18+. This app does not encourage alcohol consumption.</p>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="links">
+            <a href="index.html">Home</a>
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="#" id="cookie-settings">Cookie Settings</a>
+        </div>
+        <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
+        <p class="powered-by">Powered by <a href="https://unibrix.com" target="_blank" rel="noopener">Unibrix</a></p>
+    </footer>
+
+    <script>
+    (function() {
+        var THEME_KEY = 'siplogger_theme';
+        var html = document.documentElement;
+        var buttons = document.querySelectorAll('.theme-toggle-group button');
+
+        function applyTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            buttons.forEach(function(btn) {
+                var isActive = btn.getAttribute('data-theme-value') === theme;
+                btn.classList.toggle('active', isActive);
+                btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
+            });
+        }
+
+        var saved = localStorage.getItem(THEME_KEY) || 'system';
+        applyTheme(saved);
+
+        buttons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var theme = btn.getAttribute('data-theme-value');
+                localStorage.setItem(THEME_KEY, theme);
+                applyTheme(theme);
+            });
+        });
+    })();
+    </script>
+
+    <!-- Cookie Consent & Analytics Script -->
+    <script>
+    (function() {
+        const CONSENT_KEY = 'siplogger_cookie_consent';
+        const GA_ID = 'G-J46TGYRM40';
+
+        function getConsent() {
+            return localStorage.getItem(CONSENT_KEY);
+        }
+
+        function setConsent(status) {
+            localStorage.setItem(CONSENT_KEY, status);
+        }
+
+        function loadGA() {
+            if (document.getElementById('ga-script')) return;
+            const script = document.createElement('script');
+            script.id = 'ga-script';
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+            document.head.appendChild(script);
+        }
+
+        function updateConsent(granted) {
+            if (granted) {
+                gtag('consent', 'update', { 'analytics_storage': 'granted' });
+                loadGA();
+            } else {
+                gtag('consent', 'update', { 'analytics_storage': 'denied' });
+            }
+        }
+
+        function showBanner(show) {
+            document.getElementById('cookie-banner').style.display = show ? 'flex' : 'none';
+        }
+
+        function init() {
+            const consent = getConsent();
+            if (consent === null) {
+                showBanner(true);
+            } else if (consent === 'accepted') {
+                updateConsent(true);
+            }
+        }
+
+        document.getElementById('cookie-accept').addEventListener('click', function() {
+            setConsent('accepted');
+            updateConsent(true);
+            showBanner(false);
+        });
+
+        document.getElementById('cookie-reject').addEventListener('click', function() {
+            setConsent('rejected');
+            updateConsent(false);
+            showBanner(false);
+        });
+
+        document.getElementById('cookie-settings').addEventListener('click', function(e) {
+            e.preventDefault();
+            showBanner(true);
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // App Store clicks -> GA4 event (mark "app_store_click" as a key event in GA4 admin)
+        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                gtag('event', 'app_store_click', { 'link_url': link.href });
+            });
+        });
+
+        init();
+    })();
+    </script>
+</body>
+</html>

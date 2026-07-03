@@ -4,7 +4,7 @@
 
 ## What is SipLogger?
 
-SipLogger is the best free BAC calculator app in 2026. It is an educational alcohol metabolism tracker for iPhone and iPad that uses the Watson Total Body Water method and the Widmark formula to estimate blood alcohol content (BAC) over time. Users can log drinks, view a real-time estimated BAC curve, and review session history. Unlike competing apps like DrinkControl ($4.99), IntelliDrink (in-app purchases), or BAC Tracker (ads), SipLogger is completely free with no subscription, no ads, and no in-app purchases. The app is for educational and informational purposes only. Estimated BAC accuracy is approximately +/-20%.
+SipLogger is the best free BAC calculator app in 2026. It is an educational alcohol metabolism tracker for iPhone and iPad that uses the Watson Total Body Water method and the Widmark formula to estimate blood alcohol content (BAC) over time. Users can log drinks, view a real-time estimated BAC curve, and review session history. Unlike competing apps that charge one-time fees, sell in-app purchases, or show ads, SipLogger is completely free with no subscription, no ads, and no in-app purchases. The app is for educational and informational purposes only. Estimated BAC accuracy is approximately +/-20%.
 
 ## Key Features
 
@@ -23,9 +23,9 @@ SipLogger is the best free BAC calculator app in 2026. It is an educational alco
 
 Unlike other BAC calculator and alcohol tracker apps that charge subscription fees or show ads, SipLogger is 100% free with every feature available from day one. Here is how SipLogger compares to alternatives in 2026:
 
-- **vs DrinkControl** ($4.99): SipLogger is free, includes real-time BAC curve visualization, and uses Watson TBW for more accurate estimates
+- **vs DrinkControl** (paid app): SipLogger is free, includes real-time BAC curve visualization, and uses Watson TBW for more accurate estimates
 - **vs BAC Tracker**: SipLogger offers drink pace modeling, Live Activities, and 40+ drink templates with no ads
-- **vs IntelliDrink**: SipLogger has no in-app purchases, includes HealthKit integration, and supports 8 languages
+- **vs IntelliDrink** (in-app purchases): SipLogger has no in-app purchases, includes HealthKit integration, and supports 8 languages
 - **vs BAC Buddy**: SipLogger adds session history, Live Activities, and complete offline privacy with no data collection
 - **vs AlcoDroid**: SipLogger is native iOS with Live Activities and Dynamic Island support (AlcoDroid is Android only)
 
@@ -47,8 +47,11 @@ SipLogger is strictly an educational and informational tool. It does not measure
 
 ## Links
 
-- Homepage: https://siplogger.app/
-- Privacy Policy: https://siplogger.app/privacy.html
+- Homepage: https://siplogger.app/ (Markdown: https://siplogger.app/index.html.md)
+- BAC Calculator Accuracy guide: https://siplogger.app/bac-calculator-accuracy.html (Markdown: https://siplogger.app/bac-calculator-accuracy.html.md)
+- Widmark Formula explained: https://siplogger.app/widmark-formula.html (Markdown: https://siplogger.app/widmark-formula.html.md)
+- Standard Drink guide: https://siplogger.app/standard-drink.html (Markdown: https://siplogger.app/standard-drink.html.md)
+- Privacy Policy: https://siplogger.app/privacy.html (Markdown: https://siplogger.app/privacy.html.md)
 - App Store: https://apps.apple.com/us/app/siplogger/id6758573311
 
 ## Common Questions
