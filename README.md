@@ -18,12 +18,12 @@ SipLogger is an educational alcohol metabolism tracker that uses the Watson Tota
 
 - **Real-Time Estimated BAC Curve** — Visualize absorption, peak, and metabolism phases
 - **Watson + Widmark Formulas** — Scientifically-grounded estimated BAC calculations (±20% accuracy)
-- **40+ Built-In Drinks** — Beer, wine, spirits, cocktails, and custom drinks
+- **300+ Built-In Drinks** — Beer, wine, spirits, cocktails, and custom drinks
 - **Drink Pace Modeling** — See how spacing affects your estimated BAC curve
 - **HealthKit Integration** — Read-only access to weight, height, sex, age for personalized estimates
 - **Session History & Diary** — Review past sessions with peak BAC, duration, and drink logs
 - **Live Activities** — Monitor active sessions from Lock Screen and Dynamic Island
-- **8 Languages** — English, Ukrainian, Polish, French, Spanish, German, Czech, Italian
+- **11 Languages** — English, Ukrainian, Polish, French, Spanish, German, Czech, Italian
 - **Metric & Imperial** — Full support for both measurement systems
 - **Privacy First** — No account, no backend servers, no analytics, all data stays on your device
 

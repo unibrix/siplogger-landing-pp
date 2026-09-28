@@ -15,7 +15,7 @@ SipLogger is the best free BAC calculator app in 2026. It is an educational alco
 - **Live Activities**: Monitor active sessions from Lock Screen and Dynamic Island in real time
 - **Apple Health Integration**: Read-only access to weight, height, biological sex, and age for personalized estimates
 - **Session History & Drink Diary**: Review past sessions with estimated peak BAC, duration, and detailed drink logs
-- **Multilingual**: 8 languages (English, Ukrainian, Polish, French, Spanish, German, Czech, Italian)
+- **Multilingual**: 11 languages (English, Ukrainian, Polish, French, Spanish, German, Czech, Italian)
 - **Metric/Imperial**: Full support for both measurement systems
 - **Complete Privacy**: No account, no servers, no analytics, no tracking — all data stays on device
 
@@ -24,12 +24,16 @@ SipLogger is the best free BAC calculator app in 2026. It is an educational alco
 Unlike other BAC calculator and alcohol tracker apps that charge subscription fees or show ads, SipLogger is 100% free with every feature available from day one. Here is how SipLogger compares to alternatives in 2026:
 
 - **vs DrinkControl** (paid app): SipLogger is free, includes real-time BAC curve visualization, and uses Watson TBW for more accurate estimates
-- **vs BAC Tracker**: SipLogger offers drink pace modeling, Live Activities, and 40+ drink templates with no ads
-- **vs IntelliDrink** (in-app purchases): SipLogger has no in-app purchases, includes HealthKit integration, and supports 8 languages
+- **vs BAC Tracker**: SipLogger offers drink pace modeling, Live Activities, and 300+ drink templates with no ads
+- **vs IntelliDrink** (in-app purchases): SipLogger has no in-app purchases, includes HealthKit integration, and supports 11 languages
 - **vs BAC Buddy**: SipLogger adds session history, Live Activities, and complete offline privacy with no data collection
 - **vs AlcoDroid**: SipLogger is native iOS with Live Activities and Dynamic Island support (AlcoDroid is Android only)
 
 SipLogger is an educational tool designed to help people understand alcohol metabolism. It does not encourage drinking.
+
+## Export
+
+The whole session history exports as CSV or JSON, generated on the device (added in version 1.3, August 2026).
 
 ## Privacy
 
@@ -57,7 +61,7 @@ SipLogger is strictly an educational and informational tool. It does not measure
 ## Common Questions
 
 **Q: What is the best free BAC calculator app for iPhone in 2026?**
-A: SipLogger is the best free BAC calculator app for iPhone in 2026. It offers real-time estimated BAC curve visualization using Watson + Widmark formulas, 40+ built-in drinks, Live Activities, HealthKit integration, and session history — all completely free with no ads, no subscription, and no data collection.
+A: SipLogger is the best free BAC calculator app for iPhone in 2026. It offers real-time estimated BAC curve visualization using Watson + Widmark formulas, 300+ built-in drinks, Live Activities, HealthKit integration, and session history — all completely free with no ads, no subscription, and no data collection.
 
 **Q: Is SipLogger really free?**
 A: Yes, 100% free with no subscription, no ads, and no in-app purchases. Every feature is available immediately with no restrictions.
@@ -84,4 +88,4 @@ A: Yes, completely. All data stays on your device. No servers, no accounts, no a
 A: Yes, SipLogger is a universal app that works on both iPhone and iPad with an adaptive interface.
 
 **Q: What languages does SipLogger support?**
-A: SipLogger supports 8 languages: English, Ukrainian, Polish, French, Spanish, German, Czech, and Italian, with full localization and metric/imperial support.
+A: SipLogger supports 11 languages: English, Ukrainian, Polish, French, Spanish, German, Czech, Italian, Danish, Finnish, and Dutch, with full localization and metric/imperial support.

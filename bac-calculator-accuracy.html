@@ -6,8 +6,12 @@
     <title>How Accurate Are BAC Calculators? What Estimates Can and Can't Tell You</title>
     <meta name="description" content="An honest look at BAC calculator accuracy: why formula-based estimates carry roughly ±20% variance, the factors that change real blood alcohol levels, and what BAC estimates should never be used for.">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="styles.css?v=2">
-    <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('siplogger_theme')||'system')</script>
+    <meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f0c24" media="(prefers-color-scheme: dark)">
+    <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="themes/indigo.css?v=1">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <script>try{document.documentElement.dataset.theme=localStorage.getItem('siplogger_theme')||'system'}catch(e){document.documentElement.dataset.theme='system'}</script>
     <link rel="canonical" href="https://siplogger.app/bac-calculator-accuracy.html">
     <link rel="alternate" type="text/markdown" href="https://siplogger.app/bac-calculator-accuracy.html.md" title="Markdown version for AI agents">
 
@@ -16,31 +20,22 @@
     <meta property="og:description" content="Why formula-based BAC estimates carry roughly ±20% variance, what changes real blood alcohol levels, and what estimates should never be used for.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://siplogger.app/bac-calculator-accuracy.html">
-    <meta property="og:image" content="https://siplogger.app/images/og-image.png">
+    <meta property="og:image" content="https://siplogger.app/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="SipLogger">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="How Accurate Are BAC Calculators?">
     <meta name="twitter:description" content="Why formula-based BAC estimates carry roughly ±20% variance — and what they should never be used for.">
-    <meta name="twitter:image" content="https://siplogger.app/images/og-image.png">
+    <meta name="twitter:image" content="https://siplogger.app/images/og-image.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Google Analytics 4 with Consent Mode -->
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'wait_for_update': 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-J46TGYRM40');
-    </script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -62,7 +57,7 @@
                 "publisher": {
                     "@id": "https://siplogger.app/#organization"
                 },
-                "image": "https://siplogger.app/images/og-image.png",
+                "image": "https://siplogger.app/images/og-image.jpg",
                 "mainEntityOfPage": "https://siplogger.app/bac-calculator-accuracy.html"
             },
             {
@@ -124,27 +119,42 @@
     </script>
 </head>
 <body>
-    <div class="theme-toggle">
-        <div class="theme-toggle-group" role="radiogroup" aria-label="Theme">
-            <button type="button" data-theme-value="light" role="radio" aria-checked="false" aria-label="Light theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
-            <button type="button" data-theme-value="dark" role="radio" aria-checked="false" aria-label="Dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-            <button type="button" data-theme-value="system" role="radio" aria-checked="true" aria-label="System theme"><svg class="icon-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg><svg class="icon-mobile" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></button>
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="site-header-inner">
+        <a class="brand" href="index.html">SipLogger</a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#how">How it works</a>
+            <a href="index.html#accuracy">Accuracy</a>
+            <a href="index.html#guides">Guides</a>
+            <a href="privacy.html">Privacy</a>
+            <a class="nav-cta" href="https://apps.apple.com/us/app/siplogger/id6758573311">Get the app</a>
+        </nav>
+        <div class="theme-toggle">
+            <fieldset class="theme-toggle-group">
+                <legend class="visually-hidden">Theme</legend>
+                <label class="theme-option"><input type="radio" name="theme" data-theme-value="light"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><span class="visually-hidden">Light theme</span></label>
+                <label class="theme-option"><input type="radio" name="theme" data-theme-value="dark"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span class="visually-hidden">Dark theme</span></label>
+                <label class="theme-option"><input type="radio" name="theme" data-theme-value="system"><svg aria-hidden="true" class="icon-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg><svg aria-hidden="true" class="icon-mobile" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg><span class="visually-hidden">System theme</span></label>
+            </fieldset>
         </div>
     </div>
+</header>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
-        <div class="cookie-content">
-            <p>We use cookies for analytics to improve your experience. No personal data is collected.</p>
-            <div class="cookie-buttons">
-                <button id="cookie-accept" class="cookie-btn accept">Accept</button>
-                <button id="cookie-reject" class="cookie-btn reject">Reject</button>
-            </div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Analytics preferences" aria-hidden="true" style="display: none;">
+    <div class="cookie-content">
+        <p id="cookie-message">We use cookies for analytics to improve your experience</p>
+        <div class="cookie-buttons">
+            <button type="button" id="cookie-accept" class="cookie-btn accept">Accept</button>
+            <button type="button" id="cookie-reject" class="cookie-btn reject">Reject</button>
         </div>
     </div>
+</div>
 
-    <main class="article-page">
-        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    <main id="main" class="article-page">
+        <a href="index.html" class="back-link">Back to home</a>
 
         <h1>How Accurate Are BAC Calculators?</h1>
         <p class="subtitle">What formula-based estimates can and can't tell you — an honest guide from an app that makes one.</p>
@@ -208,7 +218,7 @@
 
         <div class="cta-block">
             <a href="https://apps.apple.com/us/app/siplogger/id6758573311" class="app-store-badge" aria-label="Download SipLogger on the App Store">
-                <img src="images/download-on-the-app-store.svg" alt="Download SipLogger - Educational BAC Calculator on the App Store">
+                <img src="images/download-on-the-app-store.svg" alt="Download SipLogger - Educational BAC Calculator on the App Store" width="156" height="52">
             </a>
         </div>
 
@@ -223,117 +233,39 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="#" id="cookie-settings">Cookie Settings</a>
+    <footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-about">
+            <p class="footer-heading">SipLogger</p>
+            <p>A free educational BAC calculator and drink tracker for iPhone and iPad, made by Unibrix. Estimates only, for adults of legal drinking age.</p>
+            <a href="https://apps.apple.com/us/app/siplogger/id6758573311">Download on the App Store</a>
         </div>
-        <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
-        <p class="powered-by">Powered by <a href="https://unibrix.com" target="_blank" rel="noopener">Unibrix</a></p>
-    </footer>
-
-    <script>
-    (function() {
-        var THEME_KEY = 'siplogger_theme';
-        var html = document.documentElement;
-        var buttons = document.querySelectorAll('.theme-toggle-group button');
-
-        function applyTheme(theme) {
-            html.setAttribute('data-theme', theme);
-            buttons.forEach(function(btn) {
-                var isActive = btn.getAttribute('data-theme-value') === theme;
-                btn.classList.toggle('active', isActive);
-                btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
-            });
-        }
-
-        var saved = localStorage.getItem(THEME_KEY) || 'system';
-        applyTheme(saved);
-
-        buttons.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var theme = btn.getAttribute('data-theme-value');
-                localStorage.setItem(THEME_KEY, theme);
-                applyTheme(theme);
-            });
-        });
-    })();
-    </script>
+        <nav aria-label="Guides">
+            <p class="footer-heading">Guides</p>
+            <ul>
+                <li><a href="bac-calculator-accuracy.html">How accurate are BAC calculators?</a></li>
+                <li><a href="widmark-formula.html">The Widmark formula explained</a></li>
+                <li><a href="standard-drink.html">What is a standard drink?</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="Company">
+            <p class="footer-heading">Company</p>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="#" id="cookie-settings">Cookie Settings</a></li>
+                <li><a href="mailto:privacy@siplogger.app">privacy@siplogger.app</a></li>
+                <li><a href="https://unibrix.com" target="_blank" rel="noopener">Unibrix</a></li>
+            </ul>
+        </nav>
+        <div>
+            <p class="footer-heading">Please note</p>
+            <p>SipLogger does not measure blood alcohol and never gives driving advice. Estimated values vary by about ±20% from measured ones. Rated 18+.</p>
+        </div>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
+</footer>
 
     <!-- Cookie Consent & Analytics Script -->
-    <script>
-    (function() {
-        const CONSENT_KEY = 'siplogger_cookie_consent';
-        const GA_ID = 'G-J46TGYRM40';
-
-        function getConsent() {
-            return localStorage.getItem(CONSENT_KEY);
-        }
-
-        function setConsent(status) {
-            localStorage.setItem(CONSENT_KEY, status);
-        }
-
-        function loadGA() {
-            if (document.getElementById('ga-script')) return;
-            const script = document.createElement('script');
-            script.id = 'ga-script';
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-            document.head.appendChild(script);
-        }
-
-        function updateConsent(granted) {
-            if (granted) {
-                gtag('consent', 'update', { 'analytics_storage': 'granted' });
-                loadGA();
-            } else {
-                gtag('consent', 'update', { 'analytics_storage': 'denied' });
-            }
-        }
-
-        function showBanner(show) {
-            document.getElementById('cookie-banner').style.display = show ? 'flex' : 'none';
-        }
-
-        function init() {
-            const consent = getConsent();
-            if (consent === null) {
-                showBanner(true);
-            } else if (consent === 'accepted') {
-                updateConsent(true);
-            }
-        }
-
-        document.getElementById('cookie-accept').addEventListener('click', function() {
-            setConsent('accepted');
-            updateConsent(true);
-            showBanner(false);
-        });
-
-        document.getElementById('cookie-reject').addEventListener('click', function() {
-            setConsent('rejected');
-            updateConsent(false);
-            showBanner(false);
-        });
-
-        document.getElementById('cookie-settings').addEventListener('click', function(e) {
-            e.preventDefault();
-            showBanner(true);
-        });
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // App Store clicks -> GA4 event (mark "app_store_click" as a key event in GA4 admin)
-        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(link) {
-            link.addEventListener('click', function() {
-                gtag('event', 'app_store_click', { 'link_url': link.href });
-            });
-        });
-
-        init();
-    })();
-    </script>
+<script src="site.js?v=7"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
-<!-- AUTO-GENERATED from privacy.html. Do not edit by hand; edit the HTML and let .github/workflows/markdown-mirror.yml regenerate this. -->
+<!-- AUTO-GENERATED from privacy.html. Do not edit by hand; edit the HTML and run python scripts/html_to_md.py. -->
 
 > **Markdown version** of [https://siplogger.app/privacy.html](https://siplogger.app/privacy.html) — a clean, agent-friendly mirror of the HTML page.
 
 # Privacy Policy
 
-Last updated: March 19, 2026
+Last updated: September 28, 2026
 
 SipLogger ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how your information is handled when you use our free educational BAC calculator and drink tracker mobile application.
 
@@ -44,12 +44,13 @@ SipLogger contains **no third-party SDKs, analytics, tracking, or advertising** 
 
 ## Website Analytics
 
-This website (siplogger.app) uses Google Analytics 4 (GA4) with a consent-based cookie banner. Website analytics are entirely separate from the mobile app, which contains no analytics.
+This website (siplogger.app) uses Google Analytics 4 through Google Consent Mode. Website analytics are entirely separate from the mobile app, which contains no analytics at all.
 
-- Analytics cookies are only loaded after you explicitly accept them
-- You can reject cookies and browse the website without any tracking
-- You can change your cookie preference at any time via the "Cookie Settings" link in the footer
-- GA4 is configured with consent mode — no data is collected until consent is granted
+Whether Google Analytics runs before you make a choice depends on where you are. For visitors in the European Economic Area, the United Kingdom, and Switzerland, Google Analytics is not loaded until you select “Accept” in the analytics banner. Elsewhere, Google Analytics runs from your first page view and the banner lets you turn it off. Either way your choice is stored in your browser and applies to later visits, and analytics stays disabled in every region if your browser sends a Do Not Track signal. We determine the region from your device’s time zone and language settings, treating unclear cases as European, and Google’s Consent Mode additionally applies the European default based on your network location.
+
+When analytics runs, Google Analytics may process the page viewed, the referring page, a timestamp, browser and device characteristics, an approximate location derived from the network request, and clicks on App Store download links. We do not send Google Analytics your name, email address, or anything from the app. You can change your choice at any time through “Cookie Settings” in the footer; turning analytics off after it was running disables future analytics events immediately and reloads the page without the Google Analytics script.
+
+Separately, this website may count page views with Cloudflare Web Analytics, which uses no cookies, stores nothing on your device, and reports only aggregate totals. It is not loaded if your browser sends a Do Not Track signal.
 
 ## Data We Do Not Collect
 

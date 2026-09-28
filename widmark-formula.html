@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Widmark Formula Explained: How BAC Is Estimated (With Example)</title>
-    <meta name="description" content="How the Widmark formula estimates blood alcohol content: the equation, what r and β mean, the Watson Total Body Water refinement, a worked example, and the model's honest limitations.">
+    <title>Widmark Formula Explained: How BAC Is Estimated From Drinks, Weight, and Time</title>
+    <meta name="description" content="The Widmark formula estimates blood alcohol content from grams of alcohol, body weight, a distribution factor, and elimination over time. The equation, every variable with typical values, the Watson refinement, a worked example, percent versus per mille, and the model's limits.">
     <meta name="robots" content="index, follow">
-    <link rel="stylesheet" href="styles.css?v=2">
-    <script>document.documentElement.setAttribute('data-theme',localStorage.getItem('siplogger_theme')||'system')</script>
+    <meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0f0c24" media="(prefers-color-scheme: dark)">
+    <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="themes/indigo.css?v=1">
+    <link rel="stylesheet" href="styles.css?v=5">
+    <script>try{document.documentElement.dataset.theme=localStorage.getItem('siplogger_theme')||'system'}catch(e){document.documentElement.dataset.theme='system'}</script>
     <link rel="canonical" href="https://siplogger.app/widmark-formula.html">
     <link rel="alternate" type="text/markdown" href="https://siplogger.app/widmark-formula.html.md" title="Markdown version for AI agents">
 
@@ -16,31 +20,22 @@
     <meta property="og:description" content="The equation behind BAC estimation, the Watson TBW refinement, a worked example, and the model's honest limitations.">
     <meta property="og:type" content="article">
     <meta property="og:url" content="https://siplogger.app/widmark-formula.html">
-    <meta property="og:image" content="https://siplogger.app/images/og-image.png">
+    <meta property="og:image" content="https://siplogger.app/images/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="SipLogger">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="The Widmark Formula Explained">
     <meta name="twitter:description" content="The equation behind BAC estimation, the Watson TBW refinement, and a worked example.">
-    <meta name="twitter:image" content="https://siplogger.app/images/og-image.png">
+    <meta name="twitter:image" content="https://siplogger.app/images/og-image.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
     <!-- Google Analytics 4 with Consent Mode -->
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('consent', 'default', {
-        'analytics_storage': 'denied',
-        'ad_storage': 'denied',
-        'wait_for_update': 500
-    });
-    gtag('js', new Date());
-    gtag('config', 'G-J46TGYRM40');
-    </script>
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -50,19 +45,19 @@
             {
                 "@type": "Article",
                 "@id": "https://siplogger.app/widmark-formula.html#article",
-                "headline": "The Widmark Formula Explained: How BAC Is Estimated (With Example)",
+                "headline": "Widmark Formula Explained: How BAC Is Estimated From Drinks, Weight, and Time",
                 "description": "How the Widmark formula estimates blood alcohol content: the equation, the Watson Total Body Water refinement, a worked example, and the model's limitations.",
                 "url": "https://siplogger.app/widmark-formula.html",
                 "inLanguage": "en",
                 "datePublished": "2026-07-03",
-                "dateModified": "2026-07-03",
+                "dateModified": "2026-09-28",
                 "author": {
                     "@id": "https://siplogger.app/#organization"
                 },
                 "publisher": {
                     "@id": "https://siplogger.app/#organization"
                 },
-                "image": "https://siplogger.app/images/og-image.png",
+                "image": "https://siplogger.app/images/og-image.jpg",
                 "mainEntityOfPage": "https://siplogger.app/widmark-formula.html"
             },
             {
@@ -90,7 +85,7 @@
                         "name": "Is the Widmark formula still used today?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes. Nearly a century after Erik Widmark's work in the 1930s, the formula remains the foundation of forensic BAC estimation and is still referenced in toxicology, though experts apply it with documented uncertainty ranges. Modern refinements like the Watson Total Body Water method improve the body-composition side of the calculation, but the core model is unchanged."
+                            "text": "Yes. It remains the foundation of forensic BAC estimation and toxicology teaching, applied with documented uncertainty ranges. Modern refinements like Watson total body water improve the body-composition input, but the core model is unchanged after nearly a century."
                         }
                     },
                     {
@@ -98,23 +93,39 @@
                         "name": "What is the Watson Total Body Water method?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Watson's 1980 equations estimate a person's total body water from height, weight, age, and biological sex. Because alcohol distributes into body water, deriving the Widmark distribution factor from estimated TBW — rather than using Widmark's fixed averages of about 0.68 for men and 0.55 for women — personalizes the estimate to an individual's body rather than a population average."
+                            "text": "Watson's 1981 equations estimate total body water from height, weight, age, and biological sex. Because alcohol distributes into body water, deriving the distribution factor from TBW personalizes the estimate instead of using Widmark's fixed 0.68 and 0.55 averages."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "Why does my estimated BAC differ from a breathalyzer reading?",
+                        "name": "Why does my estimated BAC differ from a breathalyzer?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "A Widmark-based estimate is a mathematical model of average absorption and elimination; a breathalyzer measures actual breath alcohol at a moment in time. Food, medications, individual metabolism, and pour-size logging errors all move real BAC away from the modeled value, which is why estimates carry roughly ±20% variance. Neither an estimate nor a consumer breathalyzer should be used to decide whether driving is safe."
+                            "text": "An estimate is a mathematical model of averages; a breathalyzer measures actual breath alcohol at a moment. Food, medications, individual metabolism, and logging error all move real BAC away from the model, which is the source of the roughly ±20% variance. Neither should be used to decide whether to drive."
                         }
                     },
                     {
                         "@type": "Question",
-                        "name": "What elimination rate does the Widmark model assume?",
+                        "name": "What elimination rate does the model assume?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "A commonly used average is about 0.015% BAC per hour, but real elimination rates vary between roughly 0.010% and 0.020% per hour depending on the individual, liver function, and other factors. This variation is one of the main sources of uncertainty in any BAC estimate."
+                            "text": "A common average is 0.015% BAC per hour, with real individual rates ranging roughly 0.010 to 0.020%. That spread alone creates meaningful uncertainty in any estimate over a multi-hour session."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What is the difference between BAC in percent and per mille?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "They are the same quantity in different units. Percent is grams of alcohol per 100 ml of blood; per mille (‰) is grams per litre. Multiply percent by ten to get per mille: 0.05% equals 0.5 ‰, and 0.08% equals 0.8 ‰. SipLogger shows per mille."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can the Widmark formula tell me when I can drive?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No. It produces an educational estimate with roughly ±20% variance, and individual absorption and elimination can fall outside even that range. No formula, app, or rule of thumb should be used to decide whether to drive or operate machinery."
                         }
                     }
                 ]
@@ -124,31 +135,49 @@
     </script>
 </head>
 <body>
-    <div class="theme-toggle">
-        <div class="theme-toggle-group" role="radiogroup" aria-label="Theme">
-            <button type="button" data-theme-value="light" role="radio" aria-checked="false" aria-label="Light theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></button>
-            <button type="button" data-theme-value="dark" role="radio" aria-checked="false" aria-label="Dark theme"><svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></button>
-            <button type="button" data-theme-value="system" role="radio" aria-checked="true" aria-label="System theme"><svg class="icon-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg><svg class="icon-mobile" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg></button>
+    <a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+    <div class="site-header-inner">
+        <a class="brand" href="index.html">SipLogger</a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="index.html#features">Features</a>
+            <a href="index.html#how">How it works</a>
+            <a href="index.html#accuracy">Accuracy</a>
+            <a href="index.html#guides">Guides</a>
+            <a href="privacy.html">Privacy</a>
+            <a class="nav-cta" href="https://apps.apple.com/us/app/siplogger/id6758573311">Get the app</a>
+        </nav>
+        <div class="theme-toggle">
+            <fieldset class="theme-toggle-group">
+                <legend class="visually-hidden">Theme</legend>
+                <label class="theme-option"><input type="radio" name="theme" data-theme-value="light"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><span class="visually-hidden">Light theme</span></label>
+                <label class="theme-option"><input type="radio" name="theme" data-theme-value="dark"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg><span class="visually-hidden">Dark theme</span></label>
+                <label class="theme-option"><input type="radio" name="theme" data-theme-value="system"><svg aria-hidden="true" class="icon-desktop" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><path d="M8 21h8M12 17v4"/></svg><svg aria-hidden="true" class="icon-mobile" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><path d="M12 18h.01"/></svg><span class="visually-hidden">System theme</span></label>
+            </fieldset>
         </div>
     </div>
+</header>
 
     <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
-        <div class="cookie-content">
-            <p>We use cookies for analytics to improve your experience. No personal data is collected.</p>
-            <div class="cookie-buttons">
-                <button id="cookie-accept" class="cookie-btn accept">Accept</button>
-                <button id="cookie-reject" class="cookie-btn reject">Reject</button>
-            </div>
+    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-label="Analytics preferences" aria-hidden="true" style="display: none;">
+    <div class="cookie-content">
+        <p id="cookie-message">We use cookies for analytics to improve your experience</p>
+        <div class="cookie-buttons">
+            <button type="button" id="cookie-accept" class="cookie-btn accept">Accept</button>
+            <button type="button" id="cookie-reject" class="cookie-btn reject">Reject</button>
         </div>
     </div>
+</div>
 
-    <main class="article-page">
-        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    <main id="main" class="article-page">
+        <a href="index.html" class="back-link">Back to home</a>
 
         <h1>The Widmark Formula Explained</h1>
         <p class="subtitle">The math behind BAC estimation — the classic equation, the Watson refinement, a worked example, and where the model's limits are.</p>
-        <p class="last-updated">Last updated: July 3, 2026</p>
+        <p class="last-updated">Last updated: September 28, 2026</p>
+        <div class="answer-box">
+            <p><strong>Short answer:</strong> the Widmark formula estimates blood alcohol concentration from the grams of alcohol consumed, body weight, a distribution factor <em>r</em>, and a constant elimination rate over time: <strong>BAC% = A ÷ (r × W) × 100 − β × t</strong>. Modern implementations, SipLogger among them, replace the fixed <em>r</em> with a body-water estimate from the Watson equations. The result is an educational estimate with roughly ±20% variance, not a measurement.</p>
+        </div>
 
         <h2>Where the formula comes from</h2>
         <p>In the 1930s, Swedish physician <strong>Erik M. P. Widmark</strong> published the pharmacokinetic model that still underpins most blood alcohol estimation today. His insight was that BAC can be approximated from four things: how much pure alcohol was consumed, how much of the body it distributes into, and how much time has passed at what elimination rate.</p>
@@ -165,8 +194,22 @@
         </ul>
         <p>Intuitively: alcohol spreads through your body water (the first term), while your liver removes it at a roughly constant hourly rate (the second term).</p>
 
+        <h2>The variables at a glance</h2>
+        <div class="data-table-wrap">
+            <table class="data-table">
+                <thead><tr><th scope="col">Symbol</th><th scope="col">Meaning</th><th scope="col">Typical value</th><th scope="col">Where it comes from</th></tr></thead>
+                <tbody>
+                    <tr><th scope="row">A</th><td>Grams of pure alcohol consumed</td><td>14 g per US standard drink</td><td>Volume × ABV × 0.789; see the <a href="standard-drink.html">standard drink guide</a></td></tr>
+                    <tr><th scope="row">W</th><td>Body weight</td><td>In grams (70 kg = 70,000 g)</td><td>Your profile</td></tr>
+                    <tr><th scope="row">r</th><td>Distribution factor: the share of the body alcohol spreads into</td><td>About 0.68 (men), 0.55 (women)</td><td>Widmark's averages, or a personal body-water estimate (Watson)</td></tr>
+                    <tr><th scope="row">β</th><td>Elimination rate</td><td>About 0.015% per hour (range roughly 0.010 to 0.020)</td><td>Population average; varies per person and per session</td></tr>
+                    <tr><th scope="row">t</th><td>Hours since drinking began</td><td>Clock time</td><td>Timestamps of each drink</td></tr>
+                </tbody>
+            </table>
+        </div>
+
         <h2>The Watson refinement: personalizing r</h2>
-        <p>The weakest part of the classic formula is the fixed <strong>r</strong>: two people of the same weight can have very different body water. In 1980, Watson and colleagues published equations that estimate <strong>Total Body Water (TBW)</strong> from height, weight, age, and biological sex. Deriving the distribution factor from estimated TBW instead of a fixed average makes the estimate reflect <em>your</em> body rather than a 1930s population mean.</p>
+        <p>The weakest part of the classic formula is the fixed <strong>r</strong>: two people of the same weight can have very different body water. In 1981, Watson and colleagues published equations that estimate <strong>Total Body Water (TBW)</strong> from height, weight, age, and biological sex. Deriving the distribution factor from estimated TBW instead of a fixed average makes the estimate reflect <em>your</em> body rather than a 1930s population mean.</p>
         <p>This is the approach <a href="index.html">SipLogger</a> uses: Watson TBW to personalize the distribution factor, then Widmark's model for accumulation and elimination — with each drink's absorption modeled individually over time rather than assuming everything is absorbed instantly.</p>
 
         <h2>A worked example</h2>
@@ -178,34 +221,51 @@
         <p>The same drinks for a 60 kg woman (r ≈ 0.55): 28 ÷ (0.55 × 60,000) × 100 ≈ <strong>0.085%</strong> peak — nearly half again higher, from identical drinks. Body parameters matter enormously, which is why generic "drinks per hour" rules mislead.</p>
         <p>Remember what these numbers are: <strong>modeled averages with roughly ±20% variance</strong>, not measurements. Food in the stomach, medications, and individual metabolism can move real values well outside the example figures.</p>
 
+        <h2>Percent or per mille?</h2>
+        <p>The United States writes blood alcohol in percent by volume: a common legal threshold is 0.08%. Most of Europe writes the same quantity in per mille (‰), grams per litre of blood, so 0.08% is written 0.8 ‰, and 0.05% is 0.5 ‰. SipLogger displays per mille, matching the convention in its European markets; to convert, multiply a percent figure by ten. The worked example above, 0.059% at the peak, would read about 0.59 ‰ in the app.</p>
+
         <h2>What the model can't do</h2>
         <p>The Widmark model — even Watson-refined — assumes average absorption, a constant elimination rate, and accurate logging. In reality absorption varies with food and drink type, elimination varies by individual and session, and nobody logs a heavy pour perfectly. That is why any honest implementation, SipLogger included, presents results as <strong>educational estimates only</strong> — useful for understanding the shape of alcohol metabolism, never for deciding whether it is safe to drive. For the full picture, read <a href="bac-calculator-accuracy.html">how accurate BAC calculators really are</a>.</p>
 
         <h2>Frequently Asked Questions</h2>
         <div class="faq-list">
-            <details class="faq-item">
-                <summary>Is the Widmark formula still used today?</summary>
-                <p>Yes. It remains the foundation of forensic BAC estimation and toxicology teaching, applied with documented uncertainty ranges. Modern refinements like Watson TBW improve the body-composition input, but the core model is unchanged after nearly a century.</p>
-            </details>
-            <details class="faq-item">
-                <summary>What is the Watson Total Body Water method?</summary>
-                <p>Watson's 1980 equations estimate total body water from height, weight, age, and biological sex. Because alcohol distributes into body water, deriving the distribution factor from TBW personalizes the estimate instead of using Widmark's fixed 0.68/0.55 averages.</p>
-            </details>
-            <details class="faq-item">
-                <summary>Why does my estimated BAC differ from a breathalyzer?</summary>
-                <p>An estimate is a mathematical model of averages; a breathalyzer measures actual breath alcohol at a moment. Food, medications, individual metabolism, and logging error all move real BAC away from the model — the source of the roughly ±20% variance. Neither should be used to decide whether driving is safe.</p>
-            </details>
-            <details class="faq-item">
-                <summary>What elimination rate does the model assume?</summary>
-                <p>A common average is 0.015% BAC per hour, with real individual rates ranging roughly 0.010–0.020%. That spread alone creates meaningful uncertainty in any estimate over a multi-hour session.</p>
-            </details>
-        </div>
-
+<details class="faq-item">
+<summary>Is the Widmark formula still used today?</summary>
+<p>Yes. It remains the foundation of forensic BAC estimation and toxicology teaching, applied with documented uncertainty ranges. Modern refinements like Watson total body water improve the body-composition input, but the core model is unchanged after nearly a century.</p>
+</details>
+<details class="faq-item">
+<summary>What is the Watson Total Body Water method?</summary>
+<p>Watson's 1981 equations estimate total body water from height, weight, age, and biological sex. Because alcohol distributes into body water, deriving the distribution factor from TBW personalizes the estimate instead of using Widmark's fixed 0.68 and 0.55 averages.</p>
+</details>
+<details class="faq-item">
+<summary>Why does my estimated BAC differ from a breathalyzer?</summary>
+<p>An estimate is a mathematical model of averages; a breathalyzer measures actual breath alcohol at a moment. Food, medications, individual metabolism, and logging error all move real BAC away from the model, which is the source of the roughly ±20% variance. Neither should be used to decide whether to drive.</p>
+</details>
+<details class="faq-item">
+<summary>What elimination rate does the model assume?</summary>
+<p>A common average is 0.015% BAC per hour, with real individual rates ranging roughly 0.010 to 0.020%. That spread alone creates meaningful uncertainty in any estimate over a multi-hour session.</p>
+</details>
+<details class="faq-item">
+<summary>What is the difference between BAC in percent and per mille?</summary>
+<p>They are the same quantity in different units. Percent is grams of alcohol per 100 ml of blood; per mille (‰) is grams per litre. Multiply percent by ten to get per mille: 0.05% equals 0.5 ‰, and 0.08% equals 0.8 ‰. SipLogger shows per mille.</p>
+</details>
+<details class="faq-item">
+<summary>Can the Widmark formula tell me when I can drive?</summary>
+<p>No. It produces an educational estimate with roughly ±20% variance, and individual absorption and elimination can fall outside even that range. No formula, app, or rule of thumb should be used to decide whether to drive or operate machinery.</p>
+</details>
+</div>
         <div class="cta-block">
             <a href="https://apps.apple.com/us/app/siplogger/id6758573311" class="app-store-badge" aria-label="Download SipLogger on the App Store">
-                <img src="images/download-on-the-app-store.svg" alt="Download SipLogger - Educational BAC Calculator on the App Store">
+                <img src="images/download-on-the-app-store.svg" alt="Download SipLogger - Educational BAC Calculator on the App Store" width="156" height="52">
             </a>
         </div>
+
+        <h2>Sources</h2>
+        <ul class="source-list">
+            <li>Widmark, E. M. P. (1932). <em>Die theoretischen Grundlagen und die praktische Verwendbarkeit der gerichtlich-medizinischen Alkoholbestimmung.</em> Berlin: Urban &amp; Schwarzenberg.</li>
+            <li><a href="https://pubmed.ncbi.nlm.nih.gov/7289599/" target="_blank" rel="noopener">Watson, P. E., Watson, I. D., &amp; Batt, R. D. (1981). Prediction of blood alcohol concentrations in human subjects: updating the Widmark equation. Journal of Studies on Alcohol, 42(7), 547–556.</a></li>
+            <li>US National Institute on Alcohol Abuse and Alcoholism: What is a standard drink?</li>
+        </ul>
 
         <h2>Related reading</h2>
         <ul>
@@ -218,117 +278,39 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="links">
-            <a href="index.html">Home</a>
-            <a href="privacy.html">Privacy Policy</a>
-            <a href="#" id="cookie-settings">Cookie Settings</a>
+    <footer class="site-footer">
+    <div class="footer-grid">
+        <div class="footer-about">
+            <p class="footer-heading">SipLogger</p>
+            <p>A free educational BAC calculator and drink tracker for iPhone and iPad, made by Unibrix. Estimates only, for adults of legal drinking age.</p>
+            <a href="https://apps.apple.com/us/app/siplogger/id6758573311">Download on the App Store</a>
         </div>
-        <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
-        <p class="powered-by">Powered by <a href="https://unibrix.com" target="_blank" rel="noopener">Unibrix</a></p>
-    </footer>
-
-    <script>
-    (function() {
-        var THEME_KEY = 'siplogger_theme';
-        var html = document.documentElement;
-        var buttons = document.querySelectorAll('.theme-toggle-group button');
-
-        function applyTheme(theme) {
-            html.setAttribute('data-theme', theme);
-            buttons.forEach(function(btn) {
-                var isActive = btn.getAttribute('data-theme-value') === theme;
-                btn.classList.toggle('active', isActive);
-                btn.setAttribute('aria-checked', isActive ? 'true' : 'false');
-            });
-        }
-
-        var saved = localStorage.getItem(THEME_KEY) || 'system';
-        applyTheme(saved);
-
-        buttons.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                var theme = btn.getAttribute('data-theme-value');
-                localStorage.setItem(THEME_KEY, theme);
-                applyTheme(theme);
-            });
-        });
-    })();
-    </script>
+        <nav aria-label="Guides">
+            <p class="footer-heading">Guides</p>
+            <ul>
+                <li><a href="bac-calculator-accuracy.html">How accurate are BAC calculators?</a></li>
+                <li><a href="widmark-formula.html">The Widmark formula explained</a></li>
+                <li><a href="standard-drink.html">What is a standard drink?</a></li>
+            </ul>
+        </nav>
+        <nav aria-label="Company">
+            <p class="footer-heading">Company</p>
+            <ul>
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="#" id="cookie-settings">Cookie Settings</a></li>
+                <li><a href="mailto:privacy@siplogger.app">privacy@siplogger.app</a></li>
+                <li><a href="https://unibrix.com" target="_blank" rel="noopener">Unibrix</a></li>
+            </ul>
+        </nav>
+        <div>
+            <p class="footer-heading">Please note</p>
+            <p>SipLogger does not measure blood alcohol and never gives driving advice. Estimated values vary by about ±20% from measured ones. Rated 18+.</p>
+        </div>
+    </div>
+    <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
+</footer>
 
     <!-- Cookie Consent & Analytics Script -->
-    <script>
-    (function() {
-        const CONSENT_KEY = 'siplogger_cookie_consent';
-        const GA_ID = 'G-J46TGYRM40';
-
-        function getConsent() {
-            return localStorage.getItem(CONSENT_KEY);
-        }
-
-        function setConsent(status) {
-            localStorage.setItem(CONSENT_KEY, status);
-        }
-
-        function loadGA() {
-            if (document.getElementById('ga-script')) return;
-            const script = document.createElement('script');
-            script.id = 'ga-script';
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-            document.head.appendChild(script);
-        }
-
-        function updateConsent(granted) {
-            if (granted) {
-                gtag('consent', 'update', { 'analytics_storage': 'granted' });
-                loadGA();
-            } else {
-                gtag('consent', 'update', { 'analytics_storage': 'denied' });
-            }
-        }
-
-        function showBanner(show) {
-            document.getElementById('cookie-banner').style.display = show ? 'flex' : 'none';
-        }
-
-        function init() {
-            const consent = getConsent();
-            if (consent === null) {
-                showBanner(true);
-            } else if (consent === 'accepted') {
-                updateConsent(true);
-            }
-        }
-
-        document.getElementById('cookie-accept').addEventListener('click', function() {
-            setConsent('accepted');
-            updateConsent(true);
-            showBanner(false);
-        });
-
-        document.getElementById('cookie-reject').addEventListener('click', function() {
-            setConsent('rejected');
-            updateConsent(false);
-            showBanner(false);
-        });
-
-        document.getElementById('cookie-settings').addEventListener('click', function(e) {
-            e.preventDefault();
-            showBanner(true);
-        });
-
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // App Store clicks -> GA4 event (mark "app_store_click" as a key event in GA4 admin)
-        document.querySelectorAll('a[href*="apps.apple.com"]').forEach(function(link) {
-            link.addEventListener('click', function() {
-                gtag('event', 'app_store_click', { 'link_url': link.href });
-            });
-        });
-
-        init();
-    })();
-    </script>
+<script src="site.js?v=7"></script>
 </body>
 </html>

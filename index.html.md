@@ -1,101 +1,145 @@
-<!-- AUTO-GENERATED from index.html. Do not edit by hand; edit the HTML and let .github/workflows/markdown-mirror.yml regenerate this. -->
+<!-- AUTO-GENERATED from index.html. Do not edit by hand; edit the HTML and run python scripts/html_to_md.py. -->
 
 > **Markdown version** of [https://siplogger.app/](https://siplogger.app/) — a clean, agent-friendly mirror of the HTML page.
 
-# SipLogger — Educational BAC Calculator & Drink Tracker
+# See your estimated BAC curve, drink by drink.
 
-Understand Alcohol Metabolism. Visualize Your Estimated BAC Curve.
+SipLogger is a free educational BAC calculator app and alcohol tracker for iPhone and iPad. Log a drink from 300+ templates and the estimated curve shows absorption, the peak, and the slow return to baseline, personalised by your weight, height, sex, and age with the Watson and Widmark formulas. Nothing leaves your device.
 
-Educational and informational BAC estimation tool for iPhone & iPad. No account. No ads. No data collection.
+[![Download SipLogger on the App Store](https://siplogger.app/images/download-on-the-app-store.svg)](https://apps.apple.com/us/app/siplogger/id6758573311)
+[How the estimate works](https://siplogger.app/widmark-formula.html.md)
 
-For educational & informational purposes only. Rated 18+.
+- Free, no ads
+- No account
+- Data stays on your device
+- iOS 17 or later
+- Rated 18+
 
-[![Download SipLogger - Free BAC Calculator on the App Store](https://siplogger.app/images/download-on-the-app-store.svg)](https://apps.apple.com/us/app/siplogger/id6758573311)
+For educational and informational purposes only. Estimated values vary by about ±20% from measured ones and are never a basis for deciding whether to drive.
 
-**SipLogger is a free educational BAC calculator and alcohol tracker for iPhone** that estimates your blood alcohol level over time using the Watson Total Body Water method and the Widmark formula — with no ads, no subscription, and no data collection.
+![SipLogger active session: estimated BAC of 0.726 per mille, a curve rising to a peak and falling back to baseline, and a timeline of three logged drinks](https://siplogger.app/images/device-session.webp)
 
-These established pharmacokinetic models are personalized by your weight, height, sex, and age. Use it as a **drink counter** with **40+ built-in drink templates** or create custom entries. Observe how **drink pace and timing** affect your estimated BAC curve, see when your level approaches baseline, and review **session history** to understand your patterns — all with **HealthKit integration** and **Live Activities** for at-a-glance monitoring on your Lock Screen and Dynamic Island.
+## A drink. An evening. The pattern.
 
-Not a breathalyzer — all BAC values are mathematical estimates with approximately ±20% variance. For **educational and informational purposes only**. Available in 8 languages with metric and imperial support.
+Each drink is timestamped and modelled on its own, the evening builds an estimated curve, and every session is kept for you to look back on.
 
-## See the Educational BAC Calculator in Action
+![Adding a drink: categories for beer, wine, spirits, and liqueurs, a lager at 330 ml and 5 percent, portion choices, and pace](https://siplogger.app/images/device-add.webp)
 
-![SipLogger active session — real-time estimated BAC tracking with drink timeline and metabolism curve](https://siplogger.app/images/screenshot-1.webp)
-![SipLogger estimated BAC chart — visualize alcohol metabolism over time with Widmark formula](https://siplogger.app/images/screenshot-2.webp)
-![SipLogger add drink — choose from 40+ built-in drink templates with custom volume and ABV](https://siplogger.app/images/screenshot-3.webp)
-![SipLogger session history — review past drinking sessions and estimated BAC patterns](https://siplogger.app/images/screenshot-4.webp)
+### A drink
 
-## Educational BAC Estimation — Key Features
+Pick from 300+ drinks in six categories, or set any volume and ABV. Half, can, and pint portions are one tap, and the pace setting spreads a slow drink over the time it actually took.
 
-### Educational Estimated BAC Curve
+![A finished session from the history: estimated peak of 0.813 per mille, the curve, two drinks, and the moment baseline was reached](https://siplogger.app/images/device-detail.webp)
 
-View your estimated blood alcohol content as a smooth chart over time. Observe estimated absorption, peak, and metabolism phases — designed to help you understand how alcohol affects the body. All values are approximations (+/-20%).
+### An evening
 
-### Watson + Widmark Formulas
+The estimated curve updates as you log: the rise, the peak, and the long tail back to baseline, with the projected time it takes. Live Activities keep the session on the Lock Screen and in the Dynamic Island, and the finished evening is saved with its peak and duration.
 
-Uses the Watson Total Body Water method combined with the Widmark formula for scientifically-grounded estimation. Personalized by weight, height, biological sex, and age. All values are approximations (+/-20%).
+![Session history: days, sessions, drinks, grams of alcohol, and estimated peak per session](https://siplogger.app/images/device-history.webp)
 
-### 40+ Built-In Drinks
+### The pattern
 
-Choose from a curated library of 40+ drink templates — beer, wine, spirits, cocktails, and more. Each has pre-configured volume and ABV. Create custom drinks with any volume and alcohol percentage.
+Every session is kept with its drinks, grams of alcohol, estimated peak, and duration. Review months at a time and export the lot as CSV or JSON. It is your diary, and it stays on your device.
 
-### Drink Pace Modeling
+## What is in the app
 
-Each drink's estimated absorption is modeled individually based on timing. Observe how spacing may affect your estimated BAC curve — for educational understanding only.
+Everything is included from the first launch. There is no premium tier.
 
-### HealthKit Integration
+300+ drinks
+:   Beer, wine, spirits, liqueurs, cocktails, and more, each with a typical volume and ABV.
 
-Optionally read weight, height, biological sex, and age from Apple HealthKit for more accurate educational estimates. Read-only — SipLogger never writes to HealthKit and never transmits your health data.
+Custom drinks
+:   Any volume and any alcohol percentage, saved for next time.
 
-### Session History & Diary
+Portions and pace
+:   Half, can, pint, or your own size, and a pace setting for drinks that take a while.
 
-Review past sessions with detailed drink logs, estimated peak BAC, session duration, and time to approach baseline. A personal educational diary of your drinking patterns.
+Personalised estimate
+:   The Watson total body water method feeds the Widmark formula with your weight, height, sex, and age.
 
-### Live Activities
+Apple Health, read only
+:   Fill the profile from Health if you like. SipLogger never writes to Health and never sends the data anywhere.
 
-Monitor your active session from the Lock Screen and Dynamic Island with Live Activities. See your current estimated BAC and time to approach baseline at a glance.
+Live Activities
+:   The current estimate and time to baseline on the Lock Screen and in the Dynamic Island.
 
-### 8 Languages
+Session history
+:   Drinks, grams of alcohol, estimated peak, and duration for every session, grouped by month.
 
-Available in English, Ukrainian, Polish, French, Spanish, German, Czech, and Italian. Full localization with metric and imperial measurement support.
+Export
+:   The whole history as CSV or JSON, produced on the device.
 
-## How the Educational BAC Calculator Works
+11 languages
+:   English, Ukrainian, Polish, French, Spanish, German, Czech, Italian, Danish, Finnish, Dutch, with metric and imperial units.
 
-### 1. Set Up Your Profile
+iPhone and iPad
+:   One app for both, with a layout that uses the larger screen.
 
-Enter your weight, height, sex, and age — or let SipLogger read them from HealthKit. These values personalize the Watson + Widmark formula.
+## Two numbers to know
 
-### 2. Log Your Drinks
+### What it costs
 
-Pick from 40+ templates or create custom drinks. Each drink is timestamped for accurate absorption modeling in the estimated BAC calculation.
+$0no subscription, no ads, no in-app purchases
 
-### 3. Review Your Sessions
+SipLogger is free and complete. There is no account to create and no server behind the app, so there is nothing to pay for and nothing to cancel.
 
-See your estimated BAC curve, review session history, and learn how different drinking patterns affect estimated alcohol metabolism.
+- Every feature from the first launch
+- No analytics inside the app
+- Made by Unibrix as an educational tool
 
-## Why SipLogger Is Completely Free
+### How far an estimate can be off
 
-### No Subscription, No Ads
+±20%typical variance of formula-based estimates
 
-SipLogger is 100% free with no subscription, no ads, no in-app purchases, and no hidden costs. Every feature is available from day one.
+SipLogger measures nothing. It estimates from what you log and your profile, and formula estimates commonly differ from a measured value by about a fifth in either direction. Food, hydration, medication, and genetics all move the real number.
 
-### Complete Privacy
+- Not a breathalyzer
+- Never a basis for deciding whether to drive
+- For adults of legal drinking age
 
-No backend servers. No account required. No analytics in the app. All data stays on your device. Your drinking data is nobody's business but yours.
+## The app, screen by screen
 
-### Educational Mission
+The four iPhone screens as they appear on the App Store: an active session, a past session, adding a drink, and the history.
 
-SipLogger exists as an educational and informational tool to help people understand alcohol metabolism. Knowledge promotes responsible decision-making.
+![Active session with the estimated BAC curve and drink timeline](https://siplogger.app/images/screenshot-1.webp)![A past session with estimated peak, duration, and drinks](https://siplogger.app/images/screenshot-2.webp)![Adding a drink from the catalogue with portion and pace](https://siplogger.app/images/screenshot-3.webp)![Session history with monthly totals](https://siplogger.app/images/screenshot-4.webp)
 
-### Metric & Imperial
+## Estimates, stated plainly
 
-Switch between measurement systems based on your preference — milliliters or fluid ounces, kilograms or pounds.
+SipLogger does not measure blood alcohol. It estimates it from the drinks you log and your body profile using the Watson total body water method and the Widmark formula, models used in clinical and forensic work for decades. Formula estimates typically vary by about 20 percent from a measured value, because food, hydration, medication, liver health, and genetics all change how alcohol is absorbed and cleared. Use SipLogger to understand how alcohol moves through a body over an evening, never to decide whether to drive or operate machinery. The [accuracy guide](https://siplogger.app/bac-calculator-accuracy.html.md) explains where the variance comes from and how to read the curve.
 
-## ⚠️ Important Disclaimer
+## SipLogger at a glance
 
-SipLogger is **strictly an educational and informational tool**. It does not measure actual blood alcohol content. All BAC values are mathematical estimates with approximately **+/-20% variance** that can differ significantly from actual BAC based on food intake, hydration, medications, liver function, genetics, and other individual factors. **Never use this app to determine whether it is safe to drive, operate machinery, or engage in any activity requiring full alertness.** Always err on the side of caution. If you have consumed alcohol, use a certified breathalyzer device or arrange alternative transportation. This app **does not encourage, promote, or endorse alcohol consumption**. Intended for adults of **legal drinking age** only. Rated **18+**.
+What it is
+:   A free educational BAC calculator app and alcohol tracker for iPhone and iPad.
 
-## Frequently Asked Questions
+Made by
+:   Unibrix. This is the official website.
+
+Where to get it
+:   The [App Store](https://apps.apple.com/us/app/siplogger/id6758573311), iOS 17 or later, iPhone and iPad. There is no Android version.
+
+Price
+:   Free. No subscription, no ads, no in-app purchases.
+
+Account
+:   None. There is no server behind the app and nothing is collected.
+
+Method
+:   Watson total body water and the Widmark formula, personalised by weight, height, sex, and age. Estimates vary by about ±20%.
+
+Your data
+:   Stored on your device. Apple Health is read only, and the history exports as CSV or JSON.
+
+Drinks
+:   300+ built in across six categories, plus custom drinks.
+
+Languages
+:   11, including English, German, French, Spanish, Polish, and Ukrainian.
+
+Age rating
+:   18+. For adults of legal drinking age. SipLogger does not encourage alcohol consumption.
+
+## Frequently asked questions
 
 ### Is SipLogger really free?
 
@@ -123,7 +167,7 @@ SipLogger optionally reads weight, height, biological sex, and date of birth fro
 
 ### How many drinks are in the built-in database?
 
-SipLogger includes 40+ built-in drink templates covering beer, wine, spirits, cocktails, and more. Each template has pre-configured volume and alcohol percentage. You can also create custom drinks with any volume and ABV percentage.
+SipLogger includes 300+ built-in drink templates covering beer, wine, spirits, cocktails, and more. Each template has pre-configured volume and alcohol percentage. You can also create custom drinks with any volume and ABV percentage.
 
 ### What is the Widmark formula?
 
@@ -139,7 +183,7 @@ SipLogger is rated 18+ on the App Store. The app is intended for adults of legal
 
 ### What is the best free BAC calculator app for iPhone?
 
-SipLogger is a free educational BAC calculator for iPhone that uses the Watson TBW and Widmark formula to estimate blood alcohol content over time. Unlike many alternatives, SipLogger has no ads, no subscription, no in-app purchases, and collects no data. It includes 40+ drink templates, a real-time BAC curve, Live Activities, HealthKit integration, and is available in 8 languages.
+SipLogger is a free educational BAC calculator for iPhone that uses the Watson TBW and Widmark formula to estimate blood alcohol content over time. Unlike many alternatives, SipLogger has no ads, no subscription, no in-app purchases, and collects no data. It includes 300+ drink templates, a real-time BAC curve, Live Activities, HealthKit integration, and is available in 11 languages.
 
 ### How long until my estimated BAC reaches baseline?
 
@@ -155,24 +199,36 @@ Yes. SipLogger uses Live Activities to show your current estimated BAC and sessi
 
 ### What is a standard drink?
 
-A standard drink contains approximately 14 grams (0.6 oz) of pure alcohol — roughly equivalent to a 12 oz beer at 5% ABV, a 5 oz glass of wine at 12% ABV, or a 1.5 oz shot of spirits at 40% ABV. SipLogger's 40+ built-in drink templates are pre-configured with standard volumes and ABV percentages to help you log drinks accurately for educational BAC estimation. See our full guide to [standard drink sizes](https://siplogger.app/standard-drink.html.md).
+A standard drink contains approximately 14 grams (0.6 oz) of pure alcohol — roughly equivalent to a 12 oz beer at 5% ABV, a 5 oz glass of wine at 12% ABV, or a 1.5 oz shot of spirits at 40% ABV. SipLogger's 300+ built-in drink templates are pre-configured with standard volumes and ABV percentages to help you log drinks accurately for educational BAC estimation. See our full guide to [standard drink sizes](https://siplogger.app/standard-drink.html.md).
 
 ### Does SipLogger work offline?
 
 Yes. SipLogger works entirely offline with no internet connection required. All calculations happen on your device. There are no backend servers, no cloud sync, and no data transmission — your drinking data never leaves your iPhone or iPad.
 
-## Learn More About BAC Estimation
+## Guides
 
-[### How Accurate Are BAC Calculators?
+Longer reads on the formula, its accuracy, and what a standard drink is, with sources.
 
-What formula-based BAC estimates can and can't tell you — and why results carry roughly ±20% variance.](https://siplogger.app/bac-calculator-accuracy.html.md)
-[### The Widmark Formula Explained
+- [How accurate are BAC calculators?](https://siplogger.app/bac-calculator-accuracy.html.md)
 
-The math behind BAC estimation: Widmark's model, the Watson TBW refinement, and a worked example.](https://siplogger.app/widmark-formula.html.md)
-[### What Is a Standard Drink?
+  What formula-based estimates can and cannot tell you, and why results carry roughly ±20% variance.
 
-Standard drink sizes, ABV math, how definitions differ by country, and why it matters for estimation.](https://siplogger.app/standard-drink.html.md)
+  July 2026
+- [The Widmark formula explained](https://siplogger.app/widmark-formula.html.md)
 
-## Your Privacy Is Absolute
+  The math behind BAC estimation: Widmark's model, the Watson refinement, and a worked example.
 
-No account required. No backend servers. No analytics. No data collection. All your drink logs and session data stay on your device. HealthKit data is read-only and never transmitted. SipLogger is a completely private, educational tool.
+  July 2026
+- [What is a standard drink?](https://siplogger.app/standard-drink.html.md)
+
+  Standard drink sizes, ABV arithmetic, how definitions differ by country, and why it matters for estimation.
+
+  July 2026
+
+## Free on the App Store. Nothing to cancel, nothing collected.
+
+For iPhone and iPad, iOS 17 or later. Estimates only, for adults of legal drinking age.
+
+[![Download SipLogger on the App Store](https://siplogger.app/images/download-on-the-app-store.svg)](https://apps.apple.com/us/app/siplogger/id6758573311)
+
+SipLogger is an educational and informational tool. It does not measure blood alcohol content, estimated values vary by about ±20%, and no estimate should be used to decide whether to drive or operate machinery.

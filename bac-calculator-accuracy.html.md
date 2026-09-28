@@ -1,4 +1,4 @@
-<!-- AUTO-GENERATED from bac-calculator-accuracy.html. Do not edit by hand; edit the HTML and let .github/workflows/markdown-mirror.yml regenerate this. -->
+<!-- AUTO-GENERATED from bac-calculator-accuracy.html. Do not edit by hand; edit the HTML and run python scripts/html_to_md.py. -->
 
 > **Markdown version** of [https://siplogger.app/bac-calculator-accuracy.html](https://siplogger.app/bac-calculator-accuracy.html) — a clean, agent-friendly mirror of the HTML page.
 
