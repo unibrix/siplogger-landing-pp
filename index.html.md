@@ -17,29 +17,23 @@ SipLogger is a free educational BAC calculator app and alcohol tracker for iPhon
 
 For educational and informational purposes only. Estimated values vary by about ±20% from measured ones and are never a basis for deciding whether to drive.
 
-![SipLogger active session: estimated BAC of 0.726 per mille, a curve rising to a peak and falling back to baseline, and a timeline of three logged drinks](https://siplogger.app/images/device-session.webp)
+![The Lock Screen with the SipLogger Live Activity: a session of two drinks and the estimated time until baseline](https://siplogger.app/images/screen-lock.webp)
 
 ## A drink. An evening. The pattern.
 
 Each drink is timestamped and modelled on its own, the evening builds an estimated curve, and every session is kept for you to look back on.
 
-![Adding a drink: categories for beer, wine, spirits, and liqueurs, a lager at 330 ml and 5 percent, portion choices, and pace](https://siplogger.app/images/device-add.webp)
+Estimated curve for the session on the screens: two drinks, with the ±20% range.
 
-### A drink
+1. ### A drink
 
-Pick from 300+ drinks in six categories, or set any volume and ABV. Half, can, and pint portions are one tap, and the pace setting spreads a slow drink over the time it actually took.
+   Pick from 300+ drinks in six categories, or set any volume and ABV. Half, can, and pint portions are one tap, and the pace setting spreads a slow drink over the time it actually took.
+2. ### An evening
 
-![A finished session from the history: estimated peak of 0.813 per mille, the curve, two drinks, and the moment baseline was reached](https://siplogger.app/images/device-detail.webp)
+   The estimated curve updates as you log: the rise, the peak, and the long tail back to baseline, with the projected time it takes. Live Activities keep the session on the Lock Screen and in the Dynamic Island, and the finished evening is saved with its peak and duration.
+3. ### The pattern
 
-### An evening
-
-The estimated curve updates as you log: the rise, the peak, and the long tail back to baseline, with the projected time it takes. Live Activities keep the session on the Lock Screen and in the Dynamic Island, and the finished evening is saved with its peak and duration.
-
-![Session history: days, sessions, drinks, grams of alcohol, and estimated peak per session](https://siplogger.app/images/device-history.webp)
-
-### The pattern
-
-Every session is kept with its drinks, grams of alcohol, estimated peak, and duration. Review months at a time and export the lot as CSV or JSON. It is your diary, and it stays on your device.
+   Every session is kept with its drinks, grams of alcohol, estimated peak, and duration. Review months at a time, export the lot as CSV or JSON, or save each drink to Apple Health as you log it. It is your diary, and it stays on your device.
 
 ## What is in the app
 
@@ -57,8 +51,8 @@ Portions and pace
 Personalised estimate
 :   The Watson total body water method feeds the Widmark formula with your weight, height, sex, and age.
 
-Apple Health, read only
-:   Fill the profile from Health if you like. SipLogger never writes to Health and never sends the data anywhere.
+Apple Health
+:   Fill the profile from Health if you like, and turn on Save Drinks to Apple Health to log each drink there as standard drinks. SipLogger never sends Health data anywhere.
 
 Live Activities
 :   The current estimate and time to baseline on the Lock Screen and in the Dynamic Island.
@@ -99,9 +93,9 @@ SipLogger measures nothing. It estimates from what you log and your profile, and
 
 ## The app, screen by screen
 
-The four iPhone screens as they appear on the App Store: an active session, a past session, adding a drink, and the history.
+Five iPhone screens from one real session: before it starts, the active session, adding a drink, the Live Activity on the Lock Screen, and the history.
 
-![Active session with the estimated BAC curve and drink timeline](https://siplogger.app/images/screenshot-1.webp)![A past session with estimated peak, duration, and drinks](https://siplogger.app/images/screenshot-2.webp)![Adding a drink from the catalogue with portion and pace](https://siplogger.app/images/screenshot-3.webp)![Session history with monthly totals](https://siplogger.app/images/screenshot-4.webp)
+![SipLogger with no session running, showing the New Session button](https://siplogger.app/images/screen-empty.webp)![Active session: estimated BAC 0.015 per mille, estimated peak about 0.361 at about 23:46, the estimated curve for a lager at 23:01 and an amber ale at 23:10, and baseline at about 2:10](https://siplogger.app/images/screen-session.webp)![Adding a drink: categories for beer, wine, spirits, and liqueurs, a lager at 330 ml and 5 percent, portion choices, and pace](https://siplogger.app/images/screen-add.webp)![The Lock Screen with the SipLogger Live Activity: a session of two drinks and the estimated time until baseline](https://siplogger.app/images/screen-lock.webp)![Session history: days, sessions, drinks, grams of alcohol, and estimated peak per session](https://siplogger.app/images/screen-history.webp)
 
 ## Estimates, stated plainly
 
@@ -128,7 +122,7 @@ Method
 :   Watson total body water and the Widmark formula, personalised by weight, height, sex, and age. Estimates vary by about ±20%.
 
 Your data
-:   Stored on your device. Apple Health is read only, and the history exports as CSV or JSON.
+:   Stored on your device. Drinks can also be saved to Apple Health if you turn it on, and the history exports as CSV or JSON.
 
 Drinks
 :   300+ built in across six categories, plus custom drinks.
@@ -159,11 +153,11 @@ No. SipLogger is an educational tool and never provides driving advice. The app 
 
 ### Is my data private?
 
-Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. HealthKit data is read-only and never leaves your device. The app contains no analytics, no tracking, and no third-party SDKs.
+Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. Health data never leaves your device: SipLogger reads your profile from Apple Health and, only if you turn it on, saves your drinks there. The app contains no analytics, no tracking, and no third-party SDKs.
 
 ### What HealthKit data does SipLogger use?
 
-SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared. SipLogger never writes data to HealthKit.
+SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared. If you turn on Save Drinks to Apple Health in Settings, each drink you log is also saved to Health as standard drinks. It is off by default.
 
 ### How many drinks are in the built-in database?
 

@@ -12,7 +12,10 @@
     <link rel="preload" href="fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="themes/indigo.css?v=1">
     <link rel="stylesheet" href="styles.css?v=5">
-    <link rel="preload" as="image" type="image/webp" href="images/device-session.webp" fetchpriority="high">
+    <link rel="stylesheet" href="scrollcraft.css?v=1">
+    <link rel="stylesheet" href="landing.css?v=1">
+    <link rel="preload" as="image" type="image/webp" href="images/iphone17-black.webp" media="(min-width: 761px)">
+    <link rel="preload" as="image" type="image/webp" href="images/screen-lock.webp" media="(min-width: 761px)">
     <script>try{document.documentElement.dataset.theme=localStorage.getItem('siplogger_theme')||'system'}catch(e){document.documentElement.dataset.theme='system'}</script>
     <link rel="canonical" href="https://siplogger.app/">
     <link rel="alternate" type="text/markdown" href="https://siplogger.app/index.html.md" title="Markdown version for AI agents">
@@ -115,7 +118,7 @@
                     "Watson TBW and Widmark formula calculations",
                     "40+ built-in drink templates",
                     "Drink pace modeling and timing",
-                    "HealthKit integration (read-only: weight, height, sex, age)",
+                    "Apple Health: reads weight, height, sex, and age; optionally saves drinks as standard drinks",
                     "Session history and drink diary",
                     "Live Activities for active sessions",
                     "Multilingual support (8 languages)",
@@ -127,38 +130,45 @@
                 "screenshot": [
                     {
                         "@type": "ImageObject",
-                        "url": "https://siplogger.app/images/screenshot-1.webp",
-                        "width": 1290,
-                        "height": 2796,
-                        "caption": "SipLogger active session with the estimated BAC curve and drink timeline"
+                        "url": "https://siplogger.app/images/screen-empty.webp",
+                        "width": 804,
+                        "height": 1748,
+                        "caption": "SipLogger with no session running, showing the New Session button"
                     },
                     {
                         "@type": "ImageObject",
-                        "url": "https://siplogger.app/images/screenshot-2.webp",
-                        "width": 1290,
-                        "height": 2796,
-                        "caption": "A past session: estimated peak, duration, and drinks"
+                        "url": "https://siplogger.app/images/screen-session.webp",
+                        "width": 804,
+                        "height": 1748,
+                        "caption": "Active session: estimated BAC 0.015 per mille, estimated peak about 0.361 at about 23:46, the estimated curve for a lager at 23:01 and an amber ale at 23:10, and baseline at about 2:10"
                     },
                     {
                         "@type": "ImageObject",
-                        "url": "https://siplogger.app/images/screenshot-3.webp",
-                        "width": 1290,
-                        "height": 2796,
-                        "caption": "Adding a drink from the catalogue with portion and pace"
+                        "url": "https://siplogger.app/images/screen-add.webp",
+                        "width": 804,
+                        "height": 1748,
+                        "caption": "Adding a drink: categories for beer, wine, spirits, and liqueurs, a lager at 330 ml and 5 percent, portion choices, and pace"
                     },
                     {
                         "@type": "ImageObject",
-                        "url": "https://siplogger.app/images/screenshot-4.webp",
-                        "width": 1290,
-                        "height": 2796,
-                        "caption": "Session history with totals per month"
+                        "url": "https://siplogger.app/images/screen-lock.webp",
+                        "width": 804,
+                        "height": 1748,
+                        "caption": "The Lock Screen with the SipLogger Live Activity: a session of two drinks and the estimated time until baseline"
+                    },
+                    {
+                        "@type": "ImageObject",
+                        "url": "https://siplogger.app/images/screen-history.webp",
+                        "width": 804,
+                        "height": 1748,
+                        "caption": "Session history: days, sessions, drinks, grams of alcohol, and estimated peak per session"
                     }
                 ],
                 "keywords": "BAC calculator, blood alcohol content, drink tracker, alcohol metabolism, Widmark formula, Watson TBW, BAC chart, educational BAC app, free BAC calculator, drink diary, responsible drinking",
                 "creator": {
                     "@id": "https://siplogger.app/#organization"
                 },
-                "dateModified": "2026-09-28"
+                "dateModified": "2026-10-15"
             },
             {
                 "@type": "FAQPage",
@@ -201,7 +211,7 @@
                         "name": "Is my data private with SipLogger?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. HealthKit data (weight, height, sex, age) is read-only and never leaves your device. The app contains no analytics, no tracking, and no third-party SDKs."
+                            "text": "Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. Health data never leaves your device: SipLogger reads your profile from Apple Health and, only if you turn it on, saves your drinks there. The app contains no analytics, no tracking, and no third-party SDKs."
                         }
                     },
                     {
@@ -209,7 +219,7 @@
                         "name": "What HealthKit data does SipLogger use?",
                         "acceptedAnswer": {
                             "@type": "Answer",
-                            "text": "SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared with anyone. SipLogger never writes data to HealthKit."
+                            "text": "SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared with anyone. If you turn on Save Drinks to Apple Health in Settings, each drink you log is also saved to Health as standard drinks. It is off by default."
                         }
                     },
                     {
@@ -309,6 +319,7 @@
         ]
     }
     </script>
+    <noscript><style>.day-act{height:auto!important}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -364,30 +375,52 @@
                 <p class="hero-note">For educational and informational purposes only. Estimated values vary by about ±20% from measured ones and are never a basis for deciding whether to drive.</p>
             </div>
             <div class="hero-visual">
-                <img src="images/device-session.webp" width="900" height="1633" alt="SipLogger active session: estimated BAC of 0.726 per mille, a curve rising to a peak and falling back to baseline, and a timeline of three logged drinks" fetchpriority="high">
+                <div class="phone hero-phone">
+                    <div class="phone__screen"><img src="images/screen-lock.webp" width="804" height="1748" alt="The Lock Screen with the SipLogger Live Activity: a session of two drinks and the estimated time until baseline"></div>
+                    <img class="phone__frame" src="images/iphone17-black.webp" width="675" height="1380" alt="" aria-hidden="true">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="how">
+    <section class="day-intro" id="how">
         <div class="wrap">
             <div class="section-head">
                 <h2>A drink. An evening. The pattern.</h2>
                 <p>Each drink is timestamped and modelled on its own, the evening builds an estimated curve, and every session is kept for you to look back on.</p>
             </div>
-            <div class="trio">
-                <figure>
-                    <div class="shot"><img src="images/device-add.webp" width="900" height="1633" alt="Adding a drink: categories for beer, wine, spirits, and liqueurs, a lager at 330 ml and 5 percent, portion choices, and pace" loading="lazy"></div>
-                    <figcaption><h3>A drink</h3><p>Pick from 300+ drinks in six categories, or set any volume and ABV. Half, can, and pint portions are one tap, and the pace setting spreads a slow drink over the time it actually took.</p></figcaption>
+        </div>
+    </section>
+
+    <!-- The evening as an estimated curve: it draws as you scroll, inside its
+         +-20% band, while the phone beside it stays still (Apple product-image
+         rules) and its screen follows the evening. The curve is the session on the screens. -->
+    <section class="day-act" data-sc-act="pin" data-sc-span="6">
+        <div data-sc-stage class="day-stage">
+            <div class="wrap day-stage__grid">
+                <figure class="curve-wrap" data-warp='[[0.02, 0.0], [0.1, 0.0625], [0.16, 0.06666666666666643], [0.3, 0.09999999999999964], [0.36, 0.10416666666666696], [0.45, 0.11249999999999982], [0.55, 0.11666666666666625], [0.84, 0.8541666666666181], [0.96, 1.0]]' data-samples='[[0.0,0.0,480.0],[0.0125,12.5,480.0],[0.025,25.0,480.0],[0.0375,37.5,480.0],[0.05,50.0,480.0],[0.0625,62.5,480.0],[0.075,75.0,480.0],[0.0875,87.5,480.0],[0.1,100.0,478.7],[0.1125,112.5,472.9],[0.125,125.0,455.8],[0.1375,137.5,427.6],[0.15,150.0,397.2],[0.1625,162.5,366.8],[0.175,175.0,336.4],[0.1875,187.5,306.0],[0.2,200.0,276.0],[0.2125,212.5,249.1],[0.225,225.0,225.9],[0.2375,237.5,207.2],[0.25,250.0,199.7],[0.2625,262.5,203.4],[0.275,275.0,209.3],[0.2875,287.5,215.2],[0.3,300.0,221.0],[0.3125,312.5,226.9],[0.325,325.0,232.8],[0.3375,337.5,238.6],[0.35,350.0,244.5],[0.3625,362.5,250.4],[0.375,375.0,256.2],[0.3875,387.5,262.1],[0.4,400.0,268.0],[0.4125,412.5,273.8],[0.425,425.0,279.7],[0.4375,437.5,285.6],[0.45,450.0,291.4],[0.4625,462.5,297.3],[0.475,475.0,303.2],[0.4875,487.5,309.0],[0.5,500.0,314.9],[0.5125,512.5,320.8],[0.525,525.0,326.6],[0.5375,537.5,332.5],[0.55,550.0,338.4],[0.5625,562.5,344.3],[0.575,575.0,350.1],[0.5875,587.5,356.0],[0.6,600.0,361.9],[0.6125,612.5,367.7],[0.625,625.0,373.6],[0.6375,637.5,379.5],[0.65,650.0,385.3],[0.6625,662.5,391.2],[0.675,675.0,397.1],[0.6875,687.5,402.9],[0.7,700.0,408.8],[0.7125,712.5,414.7],[0.725,725.0,420.5],[0.7375,737.5,426.4],[0.75,750.0,432.3],[0.7625,762.5,438.1],[0.775,775.0,444.0],[0.7875,787.5,449.9],[0.8,800.0,455.7],[0.8125,812.5,461.6],[0.825,825.0,467.5],[0.8375,837.5,473.3],[0.85,850.0,479.2],[0.8625,862.5,480.0],[0.875,875.0,480.0],[0.8875,887.5,480.0],[0.9,900.0,480.0],[0.9125,912.5,480.0],[0.925,925.0,480.0],[0.9375,937.5,480.0],[0.95,950.0,480.0],[0.9625,962.5,480.0],[0.975,975.0,480.0],[0.9875,987.5,480.0],[1.0,1000.0,480.0]]' data-hours="22.75,26.75">
+                    <p class="curve__clock" aria-hidden="true">22:45</p>
+                <svg class="curve" viewBox="0 -14 1000 534" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+                    <defs><clipPath id="curve-reveal"><rect class="curve__reveal" x="0" y="-14" width="0" height="534"/></clipPath></defs>
+                    <line class="curve__base" x1="0" x2="1000" y1="480.0" y2="480.0"/>
+                    <text x="62.5" y="512" class="curve__tick">23:00</text><text x="187.5" y="512" class="curve__tick">23:30</text><text x="312.5" y="512" class="curve__tick">00:00</text><text x="437.5" y="512" class="curve__tick">00:30</text><text x="562.5" y="512" class="curve__tick">01:00</text><text x="687.5" y="512" class="curve__tick">01:30</text><text x="812.5" y="512" class="curve__tick">02:00</text><text x="937.5" y="512" class="curve__tick">02:30</text>
+                    <g clip-path="url(#curve-reveal)">
+                        <path class="curve__band" d="M0.0,480.0 L8.3,480.0 L16.7,480.0 L25.0,480.0 L33.3,480.0 L41.7,480.0 L50.0,480.0 L58.3,480.0 L66.7,480.0 L75.0,480.0 L83.3,480.0 L91.7,480.0 L100.0,478.5 L108.3,475.0 L116.7,466.3 L125.0,451.0 L133.3,429.3 L141.7,404.9 L150.0,380.6 L158.3,356.3 L166.7,332.0 L175.0,307.7 L183.3,283.3 L191.7,259.0 L200.0,235.2 L208.3,213.2 L216.7,193.2 L225.0,175.1 L233.3,158.9 L241.7,148.0 L250.0,143.6 L258.3,145.8 L266.7,150.4 L275.0,155.1 L283.3,159.8 L291.7,164.5 L300.0,169.2 L308.3,173.9 L316.7,178.6 L325.0,183.3 L333.3,188.0 L341.7,192.7 L350.0,197.4 L358.3,202.1 L366.7,206.8 L375.0,211.5 L383.3,216.2 L391.7,220.9 L400.0,225.6 L408.3,230.3 L416.7,234.9 L425.0,239.6 L433.3,244.3 L441.7,249.0 L450.0,253.7 L458.3,258.4 L466.7,263.1 L475.0,267.8 L483.3,272.5 L491.7,277.2 L500.0,281.9 L508.3,286.6 L516.7,291.3 L525.0,296.0 L533.3,300.7 L541.7,305.4 L550.0,310.1 L558.3,314.8 L566.7,319.4 L575.0,324.1 L583.3,328.8 L591.7,333.5 L600.0,338.2 L608.3,342.9 L616.7,347.6 L625.0,352.3 L633.3,357.0 L641.7,361.7 L650.0,366.4 L658.3,371.1 L666.7,375.8 L675.0,380.5 L683.3,385.2 L691.7,389.9 L700.0,394.6 L708.3,399.3 L716.7,403.9 L725.0,408.6 L733.3,413.3 L741.7,418.0 L750.0,422.7 L758.3,427.4 L766.7,432.1 L775.0,436.8 L783.3,441.5 L791.7,446.2 L800.0,450.9 L808.3,455.6 L816.7,460.3 L825.0,465.0 L833.3,469.7 L841.7,474.4 L850.0,479.1 L858.3,480.0 L866.7,480.0 L875.0,480.0 L883.3,480.0 L891.7,480.0 L900.0,480.0 L908.3,480.0 L916.7,480.0 L925.0,480.0 L933.3,480.0 L941.7,480.0 L950.0,480.0 L958.3,480.0 L966.7,480.0 L975.0,480.0 L983.3,480.0 L991.7,480.0 L1000.0,480.0 L1000.0,480.0 L991.7,480.0 L983.3,480.0 L975.0,480.0 L966.7,480.0 L958.3,480.0 L950.0,480.0 L941.7,480.0 L933.3,480.0 L925.0,480.0 L916.7,480.0 L908.3,480.0 L900.0,480.0 L891.7,480.0 L883.3,480.0 L875.0,480.0 L866.7,480.0 L858.3,480.0 L850.0,479.4 L841.7,476.2 L833.3,473.1 L825.0,470.0 L816.7,466.9 L808.3,463.7 L800.0,460.6 L791.7,457.5 L783.3,454.3 L775.0,451.2 L766.7,448.1 L758.3,444.9 L750.0,441.8 L741.7,438.7 L733.3,435.6 L725.0,432.4 L716.7,429.3 L708.3,426.2 L700.0,423.0 L691.7,419.9 L683.3,416.8 L675.0,413.7 L666.7,410.5 L658.3,407.4 L650.0,404.3 L641.7,401.1 L633.3,398.0 L625.0,394.9 L616.7,391.7 L608.3,388.6 L600.0,385.5 L591.7,382.4 L583.3,379.2 L575.0,376.1 L566.7,373.0 L558.3,369.8 L550.0,366.7 L541.7,363.6 L533.3,360.4 L525.0,357.3 L516.7,354.2 L508.3,351.1 L500.0,347.9 L491.7,344.8 L483.3,341.7 L475.0,338.5 L466.7,335.4 L458.3,332.3 L450.0,329.2 L441.7,326.0 L433.3,322.9 L425.0,319.8 L416.7,316.6 L408.3,313.5 L400.0,310.4 L391.7,307.2 L383.3,304.1 L375.0,301.0 L366.7,297.9 L358.3,294.7 L350.0,291.6 L341.7,288.5 L333.3,285.3 L325.0,282.2 L316.7,279.1 L308.3,275.9 L300.0,272.8 L291.7,269.7 L283.3,266.6 L275.0,263.4 L266.7,260.3 L258.3,257.2 L250.0,255.8 L241.7,258.7 L233.3,265.9 L225.0,276.7 L216.7,288.8 L208.3,302.2 L200.0,316.8 L191.7,332.7 L183.3,348.9 L175.0,365.1 L166.7,381.3 L158.3,397.5 L150.0,413.7 L141.7,430.0 L133.3,446.2 L125.0,460.7 L116.7,470.8 L108.3,476.7 L100.0,479.0 L91.7,480.0 L83.3,480.0 L75.0,480.0 L66.7,480.0 L58.3,480.0 L50.0,480.0 L41.7,480.0 L33.3,480.0 L25.0,480.0 L16.7,480.0 L8.3,480.0 L0.0,480.0 Z"/>
+                        <path class="curve__line" d="M0.0,480.0 L8.3,480.0 L16.7,480.0 L25.0,480.0 L33.3,480.0 L41.7,480.0 L50.0,480.0 L58.3,480.0 L66.7,480.0 L75.0,480.0 L83.3,480.0 L91.7,480.0 L100.0,478.7 L108.3,475.9 L116.7,468.6 L125.0,455.8 L133.3,437.7 L141.7,417.5 L150.0,397.2 L158.3,376.9 L166.7,356.6 L175.0,336.4 L183.3,316.1 L191.7,295.8 L200.0,276.0 L208.3,257.7 L216.7,241.0 L225.0,225.9 L233.3,212.4 L241.7,203.3 L250.0,199.7 L258.3,201.5 L266.7,205.4 L275.0,209.3 L283.3,213.2 L291.7,217.1 L300.0,221.0 L308.3,224.9 L316.7,228.8 L325.0,232.8 L333.3,236.7 L341.7,240.6 L350.0,244.5 L358.3,248.4 L366.7,252.3 L375.0,256.2 L383.3,260.1 L391.7,264.1 L400.0,268.0 L408.3,271.9 L416.7,275.8 L425.0,279.7 L433.3,283.6 L441.7,287.5 L450.0,291.4 L458.3,295.4 L466.7,299.3 L475.0,303.2 L483.3,307.1 L491.7,311.0 L500.0,314.9 L508.3,318.8 L516.7,322.7 L525.0,326.6 L533.3,330.6 L541.7,334.5 L550.0,338.4 L558.3,342.3 L566.7,346.2 L575.0,350.1 L583.3,354.0 L591.7,357.9 L600.0,361.9 L608.3,365.8 L616.7,369.7 L625.0,373.6 L633.3,377.5 L641.7,381.4 L650.0,385.3 L658.3,389.2 L666.7,393.2 L675.0,397.1 L683.3,401.0 L691.7,404.9 L700.0,408.8 L708.3,412.7 L716.7,416.6 L725.0,420.5 L733.3,424.4 L741.7,428.4 L750.0,432.3 L758.3,436.2 L766.7,440.1 L775.0,444.0 L783.3,447.9 L791.7,451.8 L800.0,455.7 L808.3,459.7 L816.7,463.6 L825.0,467.5 L833.3,471.4 L841.7,475.3 L850.0,479.2 L858.3,480.0 L866.7,480.0 L875.0,480.0 L883.3,480.0 L891.7,480.0 L900.0,480.0 L908.3,480.0 L916.7,480.0 L925.0,480.0 L933.3,480.0 L941.7,480.0 L950.0,480.0 L958.3,480.0 L966.7,480.0 L975.0,480.0 L983.3,480.0 L991.7,480.0 L1000.0,480.0"/>
+                    </g>
+                    <g class="curve__drink" data-at="0.16"><line x1="66.7" x2="66.7" y1="14" y2="480.0"/><circle cx="66.7" cy="480.0" r="6"/><text x="74.7" y="30" class="curve__tag">Lager</text></g><g class="curve__drink" data-at="0.36"><line x1="104.2" x2="104.2" y1="46" y2="480.0"/><circle cx="104.2" cy="480.0" r="6"/><text x="112.2" y="62" class="curve__tag">Amber ale</text></g>
+                    <g class="curve__mark curve__peak" data-at="0.6041"><circle cx="254.2" cy="199.9" r="7"/><text x="270.2" y="157.9" class="curve__time">23:46</text><text x="270.2" y="187.9">Estimated peak ~0.361‰</text></g>
+                    <g class="curve__mark curve__zero" data-at="0.84"><circle cx="854.2" cy="480.0" r="7"/><text x="1000.0" y="442.0" text-anchor="end">Back to baseline</text><text x="1000.0" y="410.0" text-anchor="end" class="curve__time">02:10</text></g>
+                    <circle class="curve__now" r="9" cx="0" cy="480.0"/>
+                </svg>
+                    <figcaption class="curve__note">Estimated curve for the session on the screens: two drinks, with the ±20% range.</figcaption>
                 </figure>
-                <figure>
-                    <div class="shot"><img src="images/device-detail.webp" width="900" height="1633" alt="A finished session from the history: estimated peak of 0.813 per mille, the curve, two drinks, and the moment baseline was reached" loading="lazy"></div>
-                    <figcaption><h3>An evening</h3><p>The estimated curve updates as you log: the rise, the peak, and the long tail back to baseline, with the projected time it takes. Live Activities keep the session on the Lock Screen and in the Dynamic Island, and the finished evening is saved with its peak and duration.</p></figcaption>
-                </figure>
-                <figure>
-                    <div class="shot"><img src="images/device-history.webp" width="900" height="1633" alt="Session history: days, sessions, drinks, grams of alcohol, and estimated peak per session" loading="lazy"></div>
-                    <figcaption><h3>The pattern</h3><p>Every session is kept with its drinks, grams of alcohol, estimated peak, and duration. Review months at a time and export the lot as CSV or JSON. It is your diary, and it stays on your device.</p></figcaption>
-                </figure>
+                <ol class="day-steps">
+                    <li class="day-step"><h3>A drink</h3><p>Pick from 300+ drinks in six categories, or set any volume and ABV. Half, can, and pint portions are one tap, and the pace setting spreads a slow drink over the time it actually took.</p></li>
+                    <li class="day-step"><h3>An evening</h3><p>The estimated curve updates as you log: the rise, the peak, and the long tail back to baseline, with the projected time it takes. Live Activities keep the session on the Lock Screen and in the Dynamic Island, and the finished evening is saved with its peak and duration.</p></li>
+                    <li class="day-step"><h3>The pattern</h3><p>Every session is kept with its drinks, grams of alcohol, estimated peak, and duration. Review months at a time, export the lot as CSV or JSON, or save each drink to Apple Health as you log it. It is your diary, and it stays on your device.</p></li>
+                </ol>
+                <div class="phone day-phone"><div class="phone__screen"><img class="day-screen" data-step="0" data-from="0.0" src="images/screen-empty.webp" width="804" height="1748" alt="SipLogger with no session running, showing the New Session button" loading="lazy"><img class="day-screen" data-step="0" data-from="0.1" src="images/screen-add.webp" width="804" height="1748" alt="Adding a drink: categories for beer, wine, spirits, and liqueurs, a lager at 330 ml and 5 percent, portion choices, and pace" loading="lazy"><img class="day-screen" data-step="0" data-from="0.19" src="images/screen-session1.webp" width="804" height="1748" alt="Active session after the first drink: a lager at 23:01, estimated peak about 0.145 at about 23:41, and baseline at about 0:42" loading="lazy"><img class="day-screen" data-step="0" data-from="0.31" src="images/screen-add2.webp" width="804" height="1748" alt="Adding a second drink: an amber ale, a half portion of 284 ml at 5.2 percent, at a quick pace" loading="lazy"><img class="day-screen" data-step="1" data-from="0.42" src="images/screen-session.webp" width="804" height="1748" alt="Active session: estimated BAC 0.015 per mille, estimated peak about 0.361 at about 23:46, the estimated curve for a lager at 23:01 and an amber ale at 23:10, and baseline at about 2:10" loading="lazy"><img class="day-screen" data-step="1" data-from="0.53" src="images/screen-lock.webp" width="804" height="1748" alt="The Lock Screen with the SipLogger Live Activity: a session of two drinks and the estimated time until baseline" loading="lazy"><img class="day-screen" data-step="2" data-from="0.86" src="images/screen-history.webp" width="804" height="1748" alt="Session history: days, sessions, drinks, grams of alcohol, and estimated peak per session" loading="lazy"></div><img class="phone__frame" src="images/iphone17-black.webp" width="675" height="1380" alt="" aria-hidden="true" loading="lazy"></div>
             </div>
         </div>
     </section>
@@ -403,7 +436,7 @@
                 <div><dt>Custom drinks</dt><dd>Any volume and any alcohol percentage, saved for next time.</dd></div>
                 <div><dt>Portions and pace</dt><dd>Half, can, pint, or your own size, and a pace setting for drinks that take a while.</dd></div>
                 <div><dt>Personalised estimate</dt><dd>The Watson total body water method feeds the Widmark formula with your weight, height, sex, and age.</dd></div>
-                <div><dt>Apple Health, read only</dt><dd>Fill the profile from Health if you like. SipLogger never writes to Health and never sends the data anywhere.</dd></div>
+                <div><dt>Apple Health</dt><dd>Fill the profile from Health if you like, and turn on Save Drinks to Apple Health to log each drink there as standard drinks. SipLogger never sends Health data anywhere.</dd></div>
                 <div><dt>Live Activities</dt><dd>The current estimate and time to baseline on the Lock Screen and in the Dynamic Island.</dd></div>
                 <div><dt>Session history</dt><dd>Drinks, grams of alcohol, estimated peak, and duration for every session, grouped by month.</dd></div>
                 <div><dt>Export</dt><dd>The whole history as CSV or JSON, produced on the device.</dd></div>
@@ -447,11 +480,11 @@
         <div class="wrap">
             <div class="section-head">
                 <h2>The app, screen by screen</h2>
-                <p>The four iPhone screens as they appear on the App Store: an active session, a past session, adding a drink, and the history.</p>
+                <p>Five iPhone screens from one real session: before it starts, the active session, adding a drink, the Live Activity on the Lock Screen, and the history.</p>
             </div>
         </div>
         <div class="marquee" aria-label="iPhone screenshots">
-            <div class="marquee-group"><img src="images/screenshot-1.webp" width="560" height="1213" alt="Active session with the estimated BAC curve and drink timeline" decoding="sync" fetchpriority="low"><img src="images/screenshot-2.webp" width="560" height="1213" alt="A past session with estimated peak, duration, and drinks" decoding="sync" fetchpriority="low"><img src="images/screenshot-3.webp" width="560" height="1213" alt="Adding a drink from the catalogue with portion and pace" decoding="sync" fetchpriority="low"><img src="images/screenshot-4.webp" width="560" height="1213" alt="Session history with monthly totals" decoding="sync" fetchpriority="low"></div>
+            <div class="marquee-group"><img src="images/screen-empty.webp" width="804" height="1748" alt="SipLogger with no session running, showing the New Session button" decoding="sync" fetchpriority="low"><img src="images/screen-session.webp" width="804" height="1748" alt="Active session: estimated BAC 0.015 per mille, estimated peak about 0.361 at about 23:46, the estimated curve for a lager at 23:01 and an amber ale at 23:10, and baseline at about 2:10" decoding="sync" fetchpriority="low"><img src="images/screen-add.webp" width="804" height="1748" alt="Adding a drink: categories for beer, wine, spirits, and liqueurs, a lager at 330 ml and 5 percent, portion choices, and pace" decoding="sync" fetchpriority="low"><img src="images/screen-lock.webp" width="804" height="1748" alt="The Lock Screen with the SipLogger Live Activity: a session of two drinks and the estimated time until baseline" decoding="sync" fetchpriority="low"><img src="images/screen-history.webp" width="804" height="1748" alt="Session history: days, sessions, drinks, grams of alcohol, and estimated peak per session" decoding="sync" fetchpriority="low"></div>
         </div>
     </section>
 
@@ -483,7 +516,7 @@
                 <dt>Method</dt>
                 <dd>Watson total body water and the Widmark formula, personalised by weight, height, sex, and age. Estimates vary by about ±20%.</dd>
                 <dt>Your data</dt>
-                <dd>Stored on your device. Apple Health is read only, and the history exports as CSV or JSON.</dd>
+                <dd>Stored on your device. Drinks can also be saved to Apple Health if you turn it on, and the history exports as CSV or JSON.</dd>
                 <dt>Drinks</dt>
                 <dd>300+ built in across six categories, plus custom drinks.</dd>
                 <dt>Languages</dt>
@@ -518,11 +551,11 @@
             </details>
             <details class="faq-item">
                 <summary>Is my data private?</summary>
-                <p>Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. HealthKit data is read-only and never leaves your device. The app contains no analytics, no tracking, and no third-party SDKs.</p>
+                <p>Yes, SipLogger has no backend servers, requires no account, and collects no data. All your drink logs and session history stay entirely on your device. Health data never leaves your device: SipLogger reads your profile from Apple Health and, only if you turn it on, saves your drinks there. The app contains no analytics, no tracking, and no third-party SDKs.</p>
             </details>
             <details class="faq-item">
                 <summary>What HealthKit data does SipLogger use?</summary>
-                <p>SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared. SipLogger never writes data to HealthKit.</p>
+                <p>SipLogger optionally reads weight, height, biological sex, and date of birth from HealthKit to improve estimated BAC accuracy. This data is only used locally for calculations — it is never transmitted, stored externally, or shared. If you turn on Save Drinks to Apple Health in Settings, each drink you log is also saved to Health as standard drinks. It is off by default.</p>
             </details>
             <details class="faq-item">
                 <summary>How many drinks are in the built-in database?</summary>
@@ -624,5 +657,8 @@
     <p class="copyright">&copy; <span id="year"></span> SipLogger. All rights reserved.</p>
 </footer>
 <script src="site.js?v=7"></script>
+<script src="scrollcraft.js?v=1"></script>
+<script>ScrollCraft.mount(document.body);</script>
+<script src="landing.js?v=1"></script>
 </body>
 </html>

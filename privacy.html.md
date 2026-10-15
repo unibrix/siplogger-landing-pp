@@ -4,7 +4,7 @@
 
 # Privacy Policy
 
-Last updated: September 28, 2026
+Last updated: October 15, 2026
 
 SipLogger ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how your information is handled when you use our free educational BAC calculator and drink tracker mobile application.
 
@@ -32,7 +32,7 @@ SipLogger may optionally access Apple HealthKit to read the following data for m
 **Important HealthKit disclosures:**
 
 - HealthKit access is entirely optional — the app works without it
-- SipLogger **only reads** from HealthKit — it never writes health data
+- SipLogger writes to HealthKit **only if you turn on** “Save Drinks to Apple Health” in Settings (off by default). It then saves each drink you log as Number of Alcoholic Beverages, in standard drinks, and removes it from Health if you delete the drink in SipLogger. It writes nothing else.
 - HealthKit data is used **only for local calculations** on your device
 - HealthKit data is **never transmitted** to any server or third party
 - HealthKit data is **never stored** outside of Apple's HealthKit framework

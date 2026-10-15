@@ -13,7 +13,7 @@ SipLogger is the best free BAC calculator app in 2026. It is an educational alco
 - **40+ Built-In Drink Templates**: Beer, wine, spirits, cocktails with pre-configured volume and ABV, plus custom drinks
 - **Drink Pace Modeling**: Individual absorption timing for each drink — see how spacing affects your estimated BAC
 - **Live Activities**: Monitor active sessions from Lock Screen and Dynamic Island in real time
-- **Apple Health Integration**: Read-only access to weight, height, biological sex, and age for personalized estimates
+- **Apple Health Integration**: Reads weight, height, biological sex, and age for personalized estimates; optionally saves logged drinks to Health as standard drinks (off by default)
 - **Session History & Drink Diary**: Review past sessions with estimated peak BAC, duration, and detailed drink logs
 - **Multilingual**: 11 languages (English, Ukrainian, Polish, French, Spanish, German, Czech, Italian)
 - **Metric/Imperial**: Full support for both measurement systems
@@ -41,7 +41,7 @@ The whole session history exports as CSV or JSON, generated on the device (added
 - No backend servers
 - All data stored locally on device
 - No analytics or tracking in the app
-- HealthKit data is read-only and never transmitted
+- HealthKit data is never transmitted; drinks are written to Health only if the user turns it on
 - No third-party SDKs
 - No data collection whatsoever
 
@@ -79,7 +79,7 @@ A: No. SipLogger is an educational tool and never provides driving advice. The a
 A: The Widmark formula is a well-established pharmacokinetic model for estimating blood alcohol content based on alcohol consumed, body weight, gender-specific distribution ratio, and time elapsed. SipLogger enhances this with the Watson Total Body Water method for improved accuracy.
 
 **Q: What HealthKit data does SipLogger use?**
-A: SipLogger optionally reads weight, height, biological sex, and date of birth from Apple Health. It never writes to HealthKit and never transmits health data anywhere.
+A: SipLogger optionally reads weight, height, biological sex, and date of birth from Apple Health. If you turn on Save Drinks to Apple Health, each logged drink is also saved to Health as standard drinks (off by default). Health data is never transmitted anywhere.
 
 **Q: Is my data private?**
 A: Yes, completely. All data stays on your device. No servers, no accounts, no analytics, no data collection. SipLogger contains no third-party SDKs.

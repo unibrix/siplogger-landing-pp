@@ -20,7 +20,7 @@ SipLogger is an educational alcohol metabolism tracker that uses the Watson Tota
 - **Watson + Widmark Formulas** — Scientifically-grounded estimated BAC calculations (±20% accuracy)
 - **300+ Built-In Drinks** — Beer, wine, spirits, cocktails, and custom drinks
 - **Drink Pace Modeling** — See how spacing affects your estimated BAC curve
-- **HealthKit Integration** — Read-only access to weight, height, sex, age for personalized estimates
+- **HealthKit Integration** — Reads weight, height, sex, age for personalized estimates; optionally saves logged drinks to Health (off by default)
 - **Session History & Diary** — Review past sessions with peak BAC, duration, and drink logs
 - **Live Activities** — Monitor active sessions from Lock Screen and Dynamic Island
 - **11 Languages** — English, Ukrainian, Polish, French, Spanish, German, Czech, Italian
@@ -30,9 +30,9 @@ SipLogger is an educational alcohol metabolism tracker that uses the Watson Tota
 ## Screenshots
 
 <p align="center">
-  <img src="images/screenshot-1.webp" width="250" alt="SipLogger — Real-time estimated BAC tracking with drink timeline">
-  <img src="images/screenshot-2.webp" width="250" alt="SipLogger — Estimated BAC chart showing alcohol metabolism over time">
-  <img src="images/screenshot-3.webp" width="250" alt="SipLogger — Add drinks from 40+ built-in templates">
+  <img src="images/screen-session.webp" width="250" alt="SipLogger active session with the estimated BAC curve, estimated peak, and drink timeline">
+  <img src="images/screen-lock.webp" width="250" alt="SipLogger Live Activity on the Lock Screen with the estimated time until baseline">
+  <img src="images/screen-history.webp" width="250" alt="SipLogger session history with drinks, grams of alcohol, and estimated peak per session">
 </p>
 
 ## Download
