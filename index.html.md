@@ -149,7 +149,7 @@ The estimated BAC has approximately ±20% accuracy. Individual metabolism varies
 
 ### Does SipLogger tell me when I can drive?
 
-No. SipLogger is an educational tool and never provides driving advice. The app shows when your estimated BAC approaches baseline levels, but this should never be used to determine fitness to drive. Always use a certified breathalyzer or wait a safe amount of time. When in doubt, use a taxi or rideshare.
+No. SipLogger is an educational tool and never provides driving advice. The app shows when your estimated BAC approaches baseline levels, but this should never be used to determine fitness to drive. If you have been drinking, do not drive: take a taxi, a rideshare, or public transport.
 
 ### Is my data private?
 
